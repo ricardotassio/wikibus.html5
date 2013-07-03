@@ -1,0 +1,309 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Ocorrencia",
+        "designer|userAlias": "ocorrencia",
+        "id": "ocorrencia"
+    },
+    "id": "ExtBox1-ext-gen15672",
+    "designerId": "d5b66785-457c-417a-9a1b-c88965a4b3c4",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar4",
+                "docked": "top",
+                "hidden": true,
+                "id": "toolbarOcorrencia",
+                "title": "Ocorrência"
+            },
+            "designerId": "279e495e-acad-4bb9-8999-37923928b681"
+        },
+        {
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyLabel1",
+                "hidden": true,
+                "html": "Título: informação!",
+                "id": "lblInformacaoOcorrencia",
+                "style": "text-align:center;font-style:italic;"
+            },
+            "designerId": "01dadbd5-419f-44fd-a39a-560da9d00f7e"
+        },
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet7",
+                "designer|displayName": null,
+                "id": "ocorrenciaOrigem",
+                "style": "margin-top:-20px;",
+                "title": "Origem"
+            },
+            "designerId": "212f5198-72bf-4132-862f-7e882c2702bb",
+            "cn": [
+                {
+                    "type": "selectfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MySelectField",
+                        "designer|displayName": "Selecione a origem",
+                        "id": "selectOcorrenciaOrigem",
+                        "itemId": "myselectfield",
+                        "label": null,
+                        "value": [
+                            "Selecionadorrr"
+                        ],
+                        "options": "[\r\n    {text: 'Selecione', value: -1},\r\n    {text: 'Linha', value: 1},\r\n    {text: 'Ponto',  value: 2},\r\n    {text: 'Onibus',  value: 3},\r\n    {text: 'Empresa',  value: 4},\r\n    {text: 'Ubibus',  value: 5}\r\n]"
+                    },
+                    "designerId": "35c9ab7f-9400-4029-a980-5dcdce4c2757",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onSelectOcorrenciaOrigemChange",
+                                "fn": "onSelectOcorrenciaOrigemChange",
+                                "implHandler": [
+                                    "var txtIdentidicador = Ext.getCmp('txtOcorrenciaIdentificador');\r",
+                                    "\r",
+                                    "txtIdentidicador.setValue('');\r",
+                                    "\r",
+                                    "switch(newValue){\r",
+                                    "    case 1: //Linha\r",
+                                    "    txtIdentidicador.setHidden(false);\r",
+                                    "    txtIdentidicador.setPlaceHolder('nº da linha');\r",
+                                    "    break;\r",
+                                    "\r",
+                                    "    case 2: //Ponto\r",
+                                    "    txtIdentidicador.setHidden(false);\r",
+                                    "    txtIdentidicador.setPlaceHolder('nº do ponto / referência');\r",
+                                    "    break;\r",
+                                    "\r",
+                                    "    case 3: //Onibus\r",
+                                    "    txtIdentidicador.setHidden(false);\r",
+                                    "    txtIdentidicador.setPlaceHolder('nº do onibus');\r",
+                                    "    break;\r",
+                                    "\r",
+                                    "    case 4: //Empresa\r",
+                                    "    txtIdentidicador.setHidden(false);\r",
+                                    "    txtIdentidicador.setPlaceHolder('nome da empresa');\r",
+                                    "    break;\r",
+                                    "\r",
+                                    "    case 5: //Ubibus\r",
+                                    "    txtIdentidicador.setHidden(true);\r",
+                                    "    txtIdentidicador.setPlaceHolder('');\r",
+                                    "    txtIdentidicador.setValue('');\r",
+                                    "    break;\r",
+                                    "\r",
+                                    "    default:\r",
+                                    "    txtIdentidicador.setHidden(true);\r",
+                                    "\r",
+                                    "}"
+                                ],
+                                "name": "change"
+                            },
+                            "designerId": "1eeca608-cd1a-4901-b120-250a1c6db379"
+                        }
+                    ]
+                },
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField8",
+                        "hidden": true,
+                        "id": "txtOcorrenciaIdentificador",
+                        "label": null,
+                        "placeHolder": "Identificador"
+                    },
+                    "designerId": "0fe6fedf-9acd-4615-9abf-896d868d79d7"
+                }
+            ]
+        },
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet6",
+                "style": "margin-top:-20px;",
+                "ui": "",
+                "title": "Tipo Ocorrencia"
+            },
+            "designerId": "ab1eb979-6707-4542-9eb0-b62f434fc008",
+            "cn": [
+                {
+                    "type": "radiofield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyRadioButton3",
+                        "docked": null,
+                        "label": "Reclamação",
+                        "labelAlign": "right",
+                        "labelWidth": "75%",
+                        "name": "tipo_ocorrencia",
+                        "value": "reclamacao"
+                    },
+                    "designerId": "c5fed10d-0be4-4032-8654-788e7b274343"
+                },
+                {
+                    "type": "radiofield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyRadioButton4",
+                        "label": "Elogio",
+                        "labelAlign": "right",
+                        "labelWidth": "75%",
+                        "name": "tipo_ocorrencia",
+                        "value": "elogio"
+                    },
+                    "designerId": "00ffc51d-38d1-4106-9316-7b88816e8bd3"
+                },
+                {
+                    "type": "radiofield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyRadioButton1",
+                        "label": "Sugestão",
+                        "labelAlign": "right",
+                        "labelWidth": "75%",
+                        "name": "tipo_ocorrencia",
+                        "value": "sugestao"
+                    },
+                    "designerId": "e74ec548-6d2e-40af-9195-262807fd9633"
+                },
+                {
+                    "type": "textareafield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextArea",
+                        "id": "txtDescricaoOcorrencia",
+                        "label": null,
+                        "placeHolder": "Descriçao da Ocorrência"
+                    },
+                    "designerId": "b4b026cd-5974-4cd1-8002-f5322f558812"
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton19",
+                "id": "btnOcorrenciaRegistrar",
+                "itemId": "mybutton22",
+                "style": "margin-top:-20px;",
+                "text": "Registrar"
+            },
+            "designerId": "0578131e-1944-43ec-8f87-9e4bd73985c9",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onBtnOcorrenciaRegistrarTap",
+                        "fn": "onBtnOcorrenciaRegistrarTap",
+                        "implHandler": [
+                            "Ext.Msg.confirm(\r",
+                            "      \"Confirmação\",\r",
+                            "      \"Deseja registrar esta ocorrência?\",\r",
+                            "      function(buttonId) {\r",
+                            "        if(buttonId === 'yes') {\r",
+                            "            Ext.Msg.alert('Obrigado', 'Sua ocorrência foi registrada com sucesso!', Ext.emptyFn);\r",
+                            "            \r",
+                            "            Ext.getCmp('selectOcorrenciaOrigem').setValue(-1);\r",
+                            "            \r",
+                            "            Ext.getCmp('ocorrencia').reset();\r",
+                            "        }\r",
+                            "      }, \r",
+                            "      this // scope of the controller \r",
+                            "    );\r",
+                            "\r",
+                            ""
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "57af71b9-80e2-450d-8d4e-dc28fd6ab14f"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFormpanelActivate",
+                "fn": "onFormpanelActivate",
+                "implHandler": [
+                    "Ext.getCmp('toolbarOcorrencia').setHidden(false);\r",
+                    "Ext.getCmp('lblInformacaoOcorrencia').setHidden(true);\r",
+                    "Ext.getCmp('ocorrenciaOrigem').setHidden(false);"
+                ],
+                "name": "activate"
+            },
+            "designerId": "86818125-40ca-477d-ab9c-87478a5d746b"
+        }
+    ]
+}

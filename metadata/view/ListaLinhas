@@ -1,0 +1,41 @@
+{
+    "type": "list",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ListaLinhas",
+        "designer|userAlias": "listalinhas",
+        "id": "listalinhas",
+        "style": "font-size:85%;padding:0;",
+        "ui": "round",
+        "emptyText": "Não há linhas cadastradas!",
+        "store": "itinerarios",
+        "onItemDisclosure": false
+    },
+    "id": "ExtBox1-ext-gen87053",
+    "designerId": "70e0ec29-399d-48f4-b90b-6f44cae54c8a",
+    "cn": [
+        {
+            "type": "template",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "itemTpl",
+                "implHandler": [
+                    "<div><b>{numero}</b> : {origem} - {destino}</div>\r",
+                    "<tpl if=\"via\">\r",
+                    "    <div><b style=\"visibility:hidden;\">{numero}</b>   <span style=\"font-style: italic;font-size:80%;\">(Via {via}<span>)</div>\r",
+                    "</tpl>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "5c5fac99-a9dd-4473-91c5-b65297381ce9"
+        }
+    ]
+}

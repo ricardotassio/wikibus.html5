@@ -1,0 +1,58 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Posicao",
+        "designer|userAlias": "posicao"
+    },
+    "id": "ExtBox1-ext-gen27472",
+    "designerId": "72e20f46-eb9e-44d4-928b-2647475078e2",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field6",
+                "name": "id_posicao",
+                "type": "int"
+            },
+            "designerId": "630bcee3-1b01-4df1-8efb-e8eec12be419"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field7",
+                "name": "latitude",
+                "type": "float"
+            },
+            "designerId": "7c0ba102-1e1a-4a55-9409-34590146b2dd"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field8",
+                "name": "longitude",
+                "type": "float"
+            },
+            "designerId": "436519f2-ad07-4b16-bfcc-30affba8a78d"
+        }
+    ]
+}

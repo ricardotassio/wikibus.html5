@@ -1,0 +1,352 @@
+{
+    "name": "ubibus",
+    "settings": {
+        "urlPrefix": "http://ubibus.com/",
+        "spacesToIndent": 4,
+        "exportPath": "C:/Users/Thiago/Desktop/public/",
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": true
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 676,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "touch20",
+    "topInstanceFileMap": {
+        "26a61378-13f8-4e59-b6da-51f99bf19d47": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "2db619f3-fb85-4371-8ef2-e1566b4a99a2": {
+            "paths": [
+                "metadata/view/Empresa",
+                "app/view/override/Empresa.js",
+                "app/view/Empresa.js"
+            ],
+            "className": "Empresa"
+        },
+        "634fd02c-608f-4940-8055-2167a75f84b0": {
+            "paths": [
+                "metadata/store/Empresas",
+                "app/store/override/Empresas.js",
+                "app/store/Empresas.js"
+            ],
+            "className": "Empresas"
+        },
+        "d5e1b4bb-a714-4c95-8ea8-c055e14548db": {
+            "paths": [
+                "metadata/model/Empresa",
+                "app/model/override/Empresa.js",
+                "app/model/Empresa.js"
+            ],
+            "className": "Empresa"
+        },
+        "c254763d-7431-49c7-a395-7f62e3508904": {
+            "paths": [
+                "metadata/controller/Main",
+                "app/controller/override/Main.js",
+                "app/controller/Main.js"
+            ],
+            "className": "Main"
+        },
+        "d48a4598-e3d5-4387-b959-7f9124fce8f2": {
+            "paths": [
+                "metadata/view/Onibus",
+                "app/view/override/Onibus.js",
+                "app/view/Onibus.js"
+            ],
+            "className": "Onibus"
+        },
+        "dc212b51-103b-4092-8655-f7bfa955cc9c": {
+            "paths": [
+                "metadata/view/mapa",
+                "app/view/override/mapa.js",
+                "app/view/mapa.js"
+            ],
+            "className": "mapa"
+        },
+        "5d2dbda8-023b-4e41-9ab2-8d4c1340f738": {
+            "paths": [
+                "metadata/resource/GoogleMapsAPI"
+            ],
+            "className": "GoogleMapsAPI"
+        },
+        "f9369654-d341-4ef2-8b68-5c64a833a4e9": {
+            "paths": [
+                "metadata/model/Onibus",
+                "app/model/override/Onibus.js",
+                "app/model/Onibus.js"
+            ],
+            "className": "Onibus"
+        },
+        "8eafa648-2e49-4f83-8543-6cb0d7275302": {
+            "paths": [
+                "metadata/store/Onibus",
+                "app/store/override/Onibus.js",
+                "app/store/Onibus.js"
+            ],
+            "className": "Onibus"
+        },
+        "9536cc36-2cf8-4f14-bc42-8df668ea3bd5": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "d5b66785-457c-417a-9a1b-c88965a4b3c4": {
+            "paths": [
+                "metadata/view/Ocorrencia",
+                "app/view/override/Ocorrencia.js",
+                "app/view/Ocorrencia.js"
+            ],
+            "className": "Ocorrencia"
+        },
+        "72e20f46-eb9e-44d4-928b-2647475078e2": {
+            "paths": [
+                "metadata/model/Posicao",
+                "app/model/override/Posicao.js",
+                "app/model/Posicao.js"
+            ],
+            "className": "Posicao"
+        },
+        "72a7e285-6a60-413c-8920-da09e2ed4f35": {
+            "paths": [
+                "metadata/model/Ponto",
+                "app/model/override/Ponto.js",
+                "app/model/Ponto.js"
+            ],
+            "className": "Ponto"
+        },
+        "f3e8c1ce-e6c1-4f90-ba97-429bfee9d972": {
+            "paths": [
+                "metadata/view/Ponto",
+                "app/view/override/Ponto.js",
+                "app/view/Ponto.js"
+            ],
+            "className": "Ponto"
+        },
+        "8d5c00cc-beb9-438e-a073-a278f8834c49": {
+            "paths": [
+                "metadata/store/Pontos",
+                "app/store/override/Pontos.js",
+                "app/store/Pontos.js"
+            ],
+            "className": "Pontos"
+        },
+        "41b284da-3521-44d8-80fd-b7ffa68aed19": {
+            "paths": [
+                "metadata/view/Usuario",
+                "app/view/override/Usuario.js",
+                "app/view/Usuario.js"
+            ],
+            "className": "Usuario"
+        },
+        "a8d58098-b2fa-42b1-a1f3-644accbbeb66": {
+            "paths": [
+                "metadata/view/LinhaMapa",
+                "app/view/override/LinhaMapa.js",
+                "app/view/LinhaMapa.js"
+            ],
+            "className": "LinhaMapa"
+        },
+        "1befcf8c-4be9-4aa6-bfdc-976c736e4bc5": {
+            "paths": [
+                "metadata/view/MenuPontos",
+                "app/view/override/MenuPontos.js",
+                "app/view/MenuPontos.js"
+            ],
+            "className": "MenuPontos"
+        },
+        "eb16d93d-62e3-44b6-8995-a02aa3e5dcc4": {
+            "paths": [
+                "metadata/view/Viewport",
+                "app/view/override/Viewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "Viewport"
+        },
+        "6bd0aa28-1d65-47f2-9609-ca29625aa545": {
+            "paths": [
+                "metadata/view/OnibusForm",
+                "app/view/override/OnibusForm.js",
+                "app/view/OnibusForm.js"
+            ],
+            "className": "OnibusForm"
+        },
+        "a5c5e745-8d8b-4388-a5c4-e60839876a0e": {
+            "paths": [
+                "metadata/view/Linha",
+                "app/view/override/Linha.js",
+                "app/view/Linha.js"
+            ],
+            "className": "Linha"
+        },
+        "02c1b33e-41ec-480d-92af-a7b35ae590c2": {
+            "paths": [
+                "metadata/view/LinhaForm",
+                "app/view/override/LinhaForm.js",
+                "app/view/LinhaForm.js"
+            ],
+            "className": "LinhaForm"
+        },
+        "511d7166-8183-4614-b3d7-2da5e05e50ab": {
+            "paths": [
+                "metadata/store/Linha",
+                "app/store/override/Linha.js",
+                "app/store/Linha.js"
+            ],
+            "className": "Linha"
+        },
+        "e355a4d7-6cc8-465e-949d-77241c66f7b0": {
+            "paths": [
+                "metadata/model/Linha",
+                "app/model/override/Linha.js",
+                "app/model/Linha.js"
+            ],
+            "className": "Linha"
+        },
+        "897564a4-fff6-4949-bfc6-2ca37d249238": {
+            "paths": [
+                "metadata/view/NavHome",
+                "app/view/override/NavHome.js",
+                "app/view/NavHome.js"
+            ],
+            "className": "NavHome"
+        },
+        "6c5ba7e8-18a6-4bdf-83fb-d6bbcf9b0ab8": {
+            "paths": [
+                "metadata/model/Menu",
+                "app/model/override/Menu.js",
+                "app/model/Menu.js"
+            ],
+            "className": "Menu"
+        },
+        "0e473bba-33c9-4c05-8def-b1074c50bc6c": {
+            "paths": [
+                "metadata/store/Menu",
+                "app/store/override/Menu.js",
+                "app/store/Menu.js"
+            ],
+            "className": "Menu"
+        },
+        "4fbd9467-ab3f-4876-8678-4f323eea7d98": {
+            "paths": [
+                "metadata/view/Menu",
+                "app/view/override/Menu.js",
+                "app/view/Menu.js"
+            ],
+            "className": "Menu"
+        },
+        "46300fd9-0622-45d3-8439-fea9938e2087": {
+            "paths": [
+                "metadata/view/Indicadores",
+                "app/view/override/Indicadores.js",
+                "app/view/Indicadores.js"
+            ],
+            "className": "Indicadores"
+        },
+        "03f3a496-0e4b-458f-9c82-c55e97880f61": {
+            "paths": [
+                "metadata/view/ToolbarMapa",
+                "app/view/override/ToolbarMapa.js",
+                "app/view/ToolbarMapa.js"
+            ],
+            "className": "ToolbarMapa"
+        },
+        "edde6100-3a0e-452e-9af2-c6e186bb696b": {
+            "paths": [
+                "metadata/view/PontoDetalhe",
+                "app/view/override/PontoDetalhe.js",
+                "app/view/PontoDetalhe.js"
+            ],
+            "className": "PontoDetalhe"
+        },
+        "4bd9c710-aff8-4f7c-924c-5b92ac88bf3d": {
+            "paths": [
+                "metadata/store/Itinerarios",
+                "app/store/override/Itinerarios.js",
+                "app/store/Itinerarios.js"
+            ],
+            "className": "Itinerarios"
+        },
+        "2cf64afe-96e1-4997-95b7-e04beec1311c": {
+            "paths": [
+                "metadata/model/Itinerario",
+                "app/model/override/Itinerario.js",
+                "app/model/Itinerario.js"
+            ],
+            "className": "Itinerario"
+        },
+        "70e0ec29-399d-48f4-b90b-6f44cae54c8a": {
+            "paths": [
+                "metadata/view/ListaLinhas",
+                "app/view/override/ListaLinhas.js",
+                "app/view/ListaLinhas.js"
+            ],
+            "className": "ListaLinhas"
+        },
+        "647a094f-ecdf-4b24-a568-81ef86f94d49": {
+            "paths": [
+                "metadata/model/Ocorrencia",
+                "app/model/override/Ocorrencia.js",
+                "app/model/Ocorrencia.js"
+            ],
+            "className": "Ocorrencia"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "eb16d93d-62e3-44b6-8995-a02aa3e5dcc4",
+            "897564a4-fff6-4949-bfc6-2ca37d249238",
+            "4fbd9467-ab3f-4876-8678-4f323eea7d98",
+            "2db619f3-fb85-4371-8ef2-e1566b4a99a2",
+            "d48a4598-e3d5-4387-b959-7f9124fce8f2",
+            "6bd0aa28-1d65-47f2-9609-ca29625aa545",
+            "a5c5e745-8d8b-4388-a5c4-e60839876a0e",
+            "02c1b33e-41ec-480d-92af-a7b35ae590c2",
+            "a8d58098-b2fa-42b1-a1f3-644accbbeb66",
+            "dc212b51-103b-4092-8655-f7bfa955cc9c",
+            "03f3a496-0e4b-458f-9c82-c55e97880f61",
+            "f3e8c1ce-e6c1-4f90-ba97-429bfee9d972",
+            "edde6100-3a0e-452e-9af2-c6e186bb696b",
+            "d5b66785-457c-417a-9a1b-c88965a4b3c4",
+            "41b284da-3521-44d8-80fd-b7ffa68aed19",
+            "1befcf8c-4be9-4aa6-bfdc-976c736e4bc5",
+            "46300fd9-0622-45d3-8439-fea9938e2087",
+            "70e0ec29-399d-48f4-b90b-6f44cae54c8a"
+        ],
+        "store": [
+            "634fd02c-608f-4940-8055-2167a75f84b0",
+            "8eafa648-2e49-4f83-8543-6cb0d7275302",
+            "511d7166-8183-4614-b3d7-2da5e05e50ab",
+            "4bd9c710-aff8-4f7c-924c-5b92ac88bf3d",
+            "8d5c00cc-beb9-438e-a073-a278f8834c49",
+            "0e473bba-33c9-4c05-8def-b1074c50bc6c"
+        ],
+        "controller": [
+            "c254763d-7431-49c7-a395-7f62e3508904"
+        ],
+        "model": [
+            "d5e1b4bb-a714-4c95-8ea8-c055e14548db",
+            "f9369654-d341-4ef2-8b68-5c64a833a4e9",
+            "72e20f46-eb9e-44d4-928b-2647475078e2",
+            "72a7e285-6a60-413c-8920-da09e2ed4f35",
+            "e355a4d7-6cc8-465e-949d-77241c66f7b0",
+            "6c5ba7e8-18a6-4bdf-83fb-d6bbcf9b0ab8",
+            "2cf64afe-96e1-4997-95b7-e04beec1311c",
+            "647a094f-ecdf-4b24-a568-81ef86f94d49"
+        ],
+        "resource": [
+            "26a61378-13f8-4e59-b6da-51f99bf19d47",
+            "5d2dbda8-023b-4e41-9ab2-8d4c1340f738",
+            "9536cc36-2cf8-4f14-bc42-8df668ea3bd5"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

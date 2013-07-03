@@ -1,0 +1,113 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Linha",
+        "designer|userAlias": "linha",
+        "id": "linhaView",
+        "width": null,
+        "layout": "vbox"
+    },
+    "id": "ExtBox1-ext-gen12639",
+    "designerId": "a5c5e745-8d8b-4388-a5c4-e60839876a0e",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar1",
+                "docked": "top",
+                "hidden": true,
+                "id": "toolbarLinha",
+                "title": "Linha"
+            },
+            "designerId": "957769d1-0e1b-4cb4-8bfd-05b997968460"
+        },
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet1",
+                "id": "fieldPesquisaLinha",
+                "padding": null,
+                "layout": null,
+                "instructions": "Efetue uma pesquisa :)",
+                "title": "Pesquisa"
+            },
+            "designerId": "0d0eeb52-247f-42eb-af5d-2451ef1bcadb",
+            "cn": [
+                {
+                    "type": "searchfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MySearchField",
+                        "id": "numeroLinha",
+                        "itemId": null,
+                        "label": null,
+                        "labelWidth": "45%",
+                        "name": "numeroLinha",
+                        "placeHolder": "Número da linha"
+                    },
+                    "designerId": "a6ca1461-b16f-4352-bc89-7bc92d7c3487",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onMysearchfield1Clearicontap",
+                                "fn": "onMysearchfield1Clearicontap",
+                                "implHandler": [
+                                    "//Limpa os campos do formulário\r",
+                                    "this.reset();\r",
+                                    "\r",
+                                    "//Altera o campo instructions do fieldset\r",
+                                    "Ext.getCmp('fieldPesquisaLinha').setInstructions('Efetue uma pesquisa!   :)');"
+                                ],
+                                "name": "clearicontap"
+                            },
+                            "designerId": "c83c27fe-fc51-4a73-9668-3cd0552e046b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton4",
+                "id": "btnLinhaPesquisar",
+                "ui": "action",
+                "iconAlign": "center",
+                "iconCls": null,
+                "iconMask": true,
+                "text": "Pesquisar"
+            },
+            "designerId": "d02982f0-6bbc-40fe-b651-07d35609b78d"
+        }
+    ]
+}

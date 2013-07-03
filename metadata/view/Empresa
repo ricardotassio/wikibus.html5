@@ -1,0 +1,84 @@
+{
+    "type": "list",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Empresa",
+        "designer|userAlias": "empresa",
+        "id": "empresa",
+        "ui": "round",
+        "emptyText": "Não há dados cadastrados!",
+        "store": "empresa",
+        "grouped": true,
+        "onItemDisclosure": true
+    },
+    "id": "ExtBox1-ext-gen5346",
+    "designerId": "2db619f3-fb85-4371-8ef2-e1566b4a99a2",
+    "cn": [
+        {
+            "type": "template",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "itemTpl",
+                "implHandler": [
+                    "<div>{nome}</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "2b61e49e-47ab-43de-b905-8a473a42cc9c"
+        },
+        {
+            "type": "listindexbar",
+            "reference": {
+                "name": "indexBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyIndexBar"
+            },
+            "designerId": "f247aef6-8f5f-449f-87a9-ed2e4099d8f1"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onEmpresaActivate",
+                "fn": "onEmpresaActivate",
+                "implHandler": [
+                    "Ext.getCmp('btnNavAdicionarEmpresa').setHidden(false);"
+                ],
+                "name": "activate"
+            },
+            "designerId": "d7c8af9c-21bf-4e7b-a7f0-b7859bd652ad"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onEmpresaDeactivate",
+                "fn": "onEmpresaDeactivate",
+                "implHandler": [
+                    "Ext.getCmp('btnNavAdicionarEmpresa').setHidden(true);"
+                ],
+                "name": "deactivate"
+            },
+            "designerId": "3c7ad5e9-df16-44b3-b3a3-2a7eebbc9205"
+        }
+    ]
+}

@@ -1,0 +1,113 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Onibus",
+        "designer|userAlias": "onibus",
+        "id": "onibusView",
+        "width": null,
+        "layout": "vbox"
+    },
+    "id": "ExtBox1-ext-gen20472",
+    "designerId": "d48a4598-e3d5-4387-b959-7f9124fce8f2",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar1",
+                "docked": "top",
+                "hidden": true,
+                "id": "toolbarOnibus",
+                "title": "Onibus"
+            },
+            "designerId": "63ac249f-d973-453f-bd70-d0e02a13526a"
+        },
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet1",
+                "id": "fieldPesquisaOnibus",
+                "padding": null,
+                "layout": null,
+                "instructions": "Efetue uma pesquisa :)",
+                "title": "Pesquisa"
+            },
+            "designerId": "e61bab88-bc92-402d-b0a5-64e5627e5f87",
+            "cn": [
+                {
+                    "type": "searchfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MySearchField",
+                        "id": "numeroOnibus",
+                        "itemId": null,
+                        "label": null,
+                        "labelWidth": "45%",
+                        "name": "numeroOnibus",
+                        "placeHolder": "Número do ônibus"
+                    },
+                    "designerId": "96a4e05d-26dc-4dbc-94fa-6cb4de4ede9e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onMysearchfield1Clearicontap",
+                                "fn": "onMysearchfield1Clearicontap",
+                                "implHandler": [
+                                    "//Limpa os campos do formulário\r",
+                                    "this.reset();\r",
+                                    "\r",
+                                    "//Altera o campo instructions do fieldset\r",
+                                    "Ext.getCmp('fieldPesquisaOnibus').setInstructions('Efetue uma pesquisa!   :)');"
+                                ],
+                                "name": "clearicontap"
+                            },
+                            "designerId": "8453e991-311b-4bae-908e-0513b76f7973"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton4",
+                "id": "btnOnibusPesquisar",
+                "ui": "action",
+                "iconAlign": "center",
+                "iconCls": null,
+                "iconMask": true,
+                "text": "Pesquisar"
+            },
+            "designerId": "60dcfdc3-cfe2-4bc7-8c24-4cc8a1294443"
+        }
+    ]
+}

@@ -1,0 +1,863 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Main",
+        "designer|userAlias": "main",
+        "stores": [
+            "Onibus",
+            "Pontos",
+            "Linha"
+        ]
+    },
+    "id": "ExtBox1-ext-gen16178",
+    "designerId": "c254763d-7431-49c7-a395-7f62e3508904",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "salvarEmpresa",
+                "fn": "salvarEmpresa",
+                "implHandler": [
+                    "Ext.Msg.prompt(null, \r",
+                    "'Cadastre uma empresa:',\r",
+                    "function(btn, text){\r",
+                    "    if(btn == 'ok'){\r",
+                    "\r",
+                    "        //Cria o model com os dados da empresa a ser cadastrada\r",
+                    "        var dados = Ext.create('model.empresa', {            \r",
+                    "            nome: text\r",
+                    "        });\r",
+                    "\r",
+                    "        //Cria uma instancia da store\r",
+                    "        //var store = Ext.create('store.empresas');\r",
+                    "\r",
+                    "        //Adiciona o model a store e envia pro servidor\r",
+                    "        //store.add(dados);        \r",
+                    "        //store.sync();\r",
+                    "\r",
+                    "        //Adicionao o model a lista que é exibida na tela\r",
+                    "        //this.getEmpresa().getStore().add(dados);\r",
+                    "        //this.getEmpresa().getStore().load();\r",
+                    "\r",
+                    "        var storeEmpresas = Ext.getStore('empresa');\r",
+                    "        storeEmpresas.removeAll();\r",
+                    "        storeEmpresas.add(dados);\r",
+                    "        storeEmpresas.sync();\r",
+                    "        storeEmpresas.load();\r",
+                    "\r",
+                    "    }\r",
+                    "},\r",
+                    "this, false, '', {placeHolder: 'Nome da empresa'});"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "navhome #btnNavAdicionarEmpresa"
+            },
+            "designerId": "d456dc22-405c-42db-855a-90718e5ccf48"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "empresa",
+                "ref": "empresa",
+                "selector": "empresa"
+            },
+            "designerId": "8ff7a2a6-f94b-4d35-a0d4-0aed3254f94a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "salvarOnibus",
+                "fn": "salvarOnibus",
+                "implHandler": [
+                    "var dadosOnibus = this.getOnibusForm().getValues();\r",
+                    "var storeOnibus = Ext.getStore('onibus');\r",
+                    "\r",
+                    "var editar = Ext.getCmp('opcoesOnibus').isPressed(Ext.getCmp('btnOnibusEditar'));\r",
+                    "\r",
+                    "//O framework passa 'null' ao inves de 'false' caso o checkbox não seja selecionado\r",
+                    "//Este valor é corrijido antes de ser enviado para o servidor\r",
+                    "dadosOnibus.adaptado = ((dadosOnibus.adaptado) ? true : false);\r",
+                    "\r",
+                    "//limpa o store antes de enviar os dados\r",
+                    "storeOnibus.removeAll();\r",
+                    "\r",
+                    "\r",
+                    "if(editar){\r",
+                    "    //storeOnibus.set(dadosOnibus);?? //TODO:update\r",
+                    "\r",
+                    "    //Altera o campo instructions do fieldset\r",
+                    "    //Ext.getCmp('fieldPesquisaOnibus').setInstructions('Atualizado com sucesso!   \\\\o/');\r",
+                    "    Ext.getCmp('lblOnibusStatusPesquisa').setHtml('Atualizado com sucesso!   \\\\o/');\r",
+                    "\r",
+                    "    //Exibe os botões de 'opções'\r",
+                    "    Ext.getCmp('opcoesOnibus').setHidden(false);\r",
+                    "\r",
+                    "    //Habilita os botões de 'opções'\r",
+                    "    Ext.getCmp('btnOnibusLocalizacao').setDisabled(false);\r",
+                    "    Ext.getCmp('btnOnibusOcorrencia').setDisabled(false);\r",
+                    "    Ext.getCmp('btnOnibusEditar').setDisabled(false);\r",
+                    "    Ext.getCmp('btnOnibusDetalhe').setDisabled(false);\r",
+                    "\r",
+                    "    //Exibe o botão de 'Salvar'\r",
+                    "    Ext.getCmp('btnSalvarOnibus').setHidden(true);\r",
+                    "\r",
+                    "    //Desmarca o botão de 'editar'\r",
+                    "    Ext.getCmp('opcoesOnibus').setPressedButtons(Ext.getCmp('btnOnibusHidden'));\r",
+                    "}else{\r",
+                    "    //adiciona dados e envia pro servidor\r",
+                    "    storeOnibus.add(dadosOnibus);\r",
+                    "\r",
+                    "    //Altera o campo instructions do fieldset\r",
+                    "    //Ext.getCmp('fieldPesquisaOnibus').setInstructions('Cadastrado com sucesso!   \\\\o/');\r",
+                    "    Ext.getCmp('lblOnibusStatusPesquisa').setHtml('Cadastrado com sucesso!   \\\\o/');\r",
+                    "\r",
+                    "    //Exibe os botões de 'opções'\r",
+                    "    Ext.getCmp('opcoesOnibus').setHidden(false);\r",
+                    "\r",
+                    "    //Habilita os botões de 'opções'\r",
+                    "    Ext.getCmp('btnOnibusLocalizacao').setDisabled(false);\r",
+                    "    Ext.getCmp('btnOnibusOcorrencia').setDisabled(false);\r",
+                    "    Ext.getCmp('btnOnibusEditar').setDisabled(false);\r",
+                    "    Ext.getCmp('btnOnibusDetalhe').setDisabled(false);\r",
+                    "\r",
+                    "    //Oculta o botão de 'Salvar'\r",
+                    "    Ext.getCmp('btnSalvarOnibus').setHidden(true);\r",
+                    "\r",
+                    "}\r",
+                    "storeOnibus.sync();"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "onibusform #btnSalvarOnibus"
+            },
+            "designerId": "d430ba8d-19d4-4824-9c3f-9dec77b611fd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "salvarLinha",
+                "fn": "salvarLinha",
+                "implHandler": [
+                    "var dadosLinha = this.getLinhaForm().getValues();\r",
+                    "\r",
+                    "var storeLinha = Ext.getStore('linha');\r",
+                    "\r",
+                    "var editar = Ext.getCmp('opcoesLinha').isPressed(Ext.getCmp('btnLinhaEditar'));\r",
+                    "\r",
+                    "//limpa o store antes de enviar os dados\r",
+                    "storeLinha.removeAll();\r",
+                    "\r",
+                    "\r",
+                    "if(editar){\r",
+                    "    //storeLinha.set(dadosLinha);?? //TODO:update\r",
+                    "\r",
+                    "    //Altera o campo instructions do fieldset\r",
+                    "    //Ext.getCmp('fieldPesquisaLinha').setInstructions('Atualizado com sucesso!   \\\\o/');\r",
+                    "    Ext.getCmp('lblLinhaStatusPesquisa').setHtml('Atualizado com sucesso!   \\\\o/');\r",
+                    "\r",
+                    "    //Exibe os botões de 'opções'\r",
+                    "    Ext.getCmp('opcoesLinha').setHidden(false);\r",
+                    "\r",
+                    "    //Habilita os botões de 'opções'\r",
+                    "    Ext.getCmp('btnLinhaLocalizacao').setDisabled(false);\r",
+                    "    Ext.getCmp('btnLinhaOcorrencia').setDisabled(false);\r",
+                    "    Ext.getCmp('btnLinhaEditar').setDisabled(false);\r",
+                    "    Ext.getCmp('btnLinhaDetalhe').setDisabled(false);\r",
+                    "\r",
+                    "    //Exibe o botão de 'Salvar'\r",
+                    "    Ext.getCmp('btnSalvarLinha').setHidden(true);\r",
+                    "\r",
+                    "    //Desmarca o botão de 'editar'\r",
+                    "    Ext.getCmp('opcoesLinha').setPressedButtons(Ext.getCmp('btnLinhaHidden'));\r",
+                    "}else{\r",
+                    "    //adiciona dados e envia pro servidor\r",
+                    "    storeLinha.add(dadosLinha);\r",
+                    "\r",
+                    "    //Altera o campo instructions do fieldset\r",
+                    "    //Ext.getCmp('fieldPesquisaLinha').setInstructions('Cadastrado com sucesso!   \\\\o/');\r",
+                    "    Ext.getCmp('lblLinhaStatusPesquisa').setHtml('Cadastrado com sucesso!   \\\\o/');\r",
+                    "\r",
+                    "    //Exibe os botões de 'opções'\r",
+                    "    Ext.getCmp('opcoesLinha').setHidden(false);\r",
+                    "\r",
+                    "    //Habilita os botões de 'opções'\r",
+                    "    Ext.getCmp('btnLinhaLocalizacao').setDisabled(false);\r",
+                    "    Ext.getCmp('btnLinhaOcorrencia').setDisabled(false);\r",
+                    "    Ext.getCmp('btnLinhaEditar').setDisabled(false);\r",
+                    "    Ext.getCmp('btnLinhaDetalhe').setDisabled(false);\r",
+                    "\r",
+                    "    //Oculta o botão de 'Salvar'\r",
+                    "    Ext.getCmp('btnSalvarLinha').setHidden(true);\r",
+                    "\r",
+                    "}\r",
+                    "storeLinha.sync();"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "linhaform #btnSalvarLinha"
+            },
+            "designerId": "d87e0e43-260b-404d-80dd-e8736685593d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "pesquisarOnibus",
+                "fn": "pesquisarOnibus",
+                "implHandler": [
+                    "\r",
+                    "var dadosOnibus = this.getOnibusView().getValues();\r",
+                    "var storeOnibus = Ext.getStore('onibus');\r",
+                    "\r",
+                    "storeOnibus.removeAll();\r",
+                    "storeOnibus.getProxy().setExtraParam('numero', dadosOnibus.numeroOnibus);\r",
+                    "\r",
+                    "\r",
+                    "storeOnibus.load({\r",
+                    "    scope: this,\r",
+                    "    callback: function(registro) {\r",
+                    "\r",
+                    "        //Guarda o numero pesquisado\r",
+                    "        numeroPesquisado = this.getOnibusView().getValues().numeroOnibus;\r",
+                    "\r",
+                    "        //Exibe a tela de formulário do onibus\r",
+                    "        this.getNavHome().push({\r",
+                    "            xtype: 'onibusform',\r",
+                    "            title: 'Onibus: ' + numeroPesquisado\r",
+                    "        });\r",
+                    "\r",
+                    "        //Verifica se a consulta retornou algum onibus\r",
+                    "        if(registro[0]){//Onibus encontrado\r",
+                    "\r",
+                    "            //Altera o campo instructions do fieldset\r",
+                    "            //Ext.getCmp('fieldPesquisaOnibus').setInstructions('Onibus cadastrado!   ;)');\r",
+                    "            Ext.getCmp('lblOnibusStatusPesquisa').setHtml('Onibus já cadastrado!   ;)');\r",
+                    "\r",
+                    "            //Preenche os campos com o resultado da pesquisa\r",
+                    "            this.getOnibusForm().setValues(registro[0].data);\r",
+                    "\r",
+                    "            //Exibe os botões de 'opções'\r",
+                    "            Ext.getCmp('opcoesOnibus').setHidden(false);\r",
+                    "\r",
+                    "            //Habilita os botões de 'opções'\r",
+                    "            Ext.getCmp('btnOnibusLocalizacao').setDisabled(false);\r",
+                    "            Ext.getCmp('btnOnibusOcorrencia').setDisabled(false);\r",
+                    "            Ext.getCmp('btnOnibusEditar').setDisabled(false);\r",
+                    "            Ext.getCmp('btnOnibusDetalhe').setDisabled(false);\r",
+                    "\r",
+                    "            //Desabilita os campos para edição\r",
+                    "            Ext.getCmp('selectEmpresa').setDisabled(true);\r",
+                    "            Ext.getCmp('checkAdaptado').setDisabled(true);\r",
+                    "\r",
+                    "            //Oculta o botão de 'Salvar'\r",
+                    "            Ext.getCmp('btnSalvarOnibus').setHidden(true);\r",
+                    "\r",
+                    "            Ext.getCmp('formOnibus').setHidden(false);\r",
+                    "\r",
+                    "        }else{//Onibus não encontrado\r",
+                    "\r",
+                    "            //Guarda o numero pesquisado\r",
+                    "            numeroPesquisado = this.getOnibusView().getValues().numeroOnibus;\r",
+                    "\r",
+                    "            //Limpa os campos do formulário\r",
+                    "            Ext.getCmp('onibusView').reset();\r",
+                    "\r",
+                    "            //Preenche os campo 'Numero do onibus' com o numero pesquisado\r",
+                    "            Ext.getCmp('numeroOnibus').setValue(numeroPesquisado);\r",
+                    "            Ext.getCmp('txtNumeroOnibus').setValue(numeroPesquisado);\r",
+                    "\r",
+                    "            //Altera o campo instructions do fieldset\r",
+                    "            //Ext.getCmp('fieldPesquisaOnibus').setInstructions('Onibus não cadastrado!   :(');\r",
+                    "            Ext.getCmp('lblOnibusStatusPesquisa').setHtml('Onibus não cadastrado!   :(');\r",
+                    "\r",
+                    "            //Exibe os botões de 'opções'\r",
+                    "            Ext.getCmp('opcoesOnibus').setHidden(true);\r",
+                    "\r",
+                    "            //Disabilita os botões de 'opções'\r",
+                    "            Ext.getCmp('btnOnibusLocalizacao').setDisabled(true);\r",
+                    "            Ext.getCmp('btnOnibusOcorrencia').setDisabled(true);\r",
+                    "            Ext.getCmp('btnOnibusEditar').setDisabled(true);\r",
+                    "            Ext.getCmp('btnOnibusDetalhe').setDisabled(true);\r",
+                    "\r",
+                    "            //Habilita os campos para edição\r",
+                    "            Ext.getCmp('selectEmpresa').setDisabled(false);\r",
+                    "            Ext.getCmp('checkAdaptado').setDisabled(false);\r",
+                    "\r",
+                    "            //Exibe o botão de 'Salvar'\r",
+                    "            Ext.getCmp('btnSalvarOnibus').setHidden(false);\r",
+                    "\r",
+                    "            //Exibe o formulário\r",
+                    "            Ext.getCmp('formOnibus').setHidden(false);\r",
+                    "        }\r",
+                    "\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "onibus #btnOnibusPesquisar"
+            },
+            "designerId": "ecb6ad35-c731-4a69-adec-80b9a518a6a9"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onibusView",
+                "ref": "onibusView",
+                "selector": "#onibusView"
+            },
+            "designerId": "4ea1b206-d4ce-495b-b9d8-c6260ef60d52"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onibusForm",
+                "ref": "onibusForm",
+                "selector": "#onibusForm"
+            },
+            "designerId": "fba0d850-d38f-4ace-b534-6c97fe791a9c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "navegador",
+                "ref": "navegador",
+                "selector": "navegadoronibus"
+            },
+            "designerId": "5f2ce123-44fc-4c19-925c-553fc3cc31ff"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "pesquisarLinha",
+                "fn": "pesquisarLinha",
+                "implHandler": [
+                    "var dadosLinha = this.getLinhaView().getValues();\r",
+                    "var storeLinha = Ext.getStore('linha');\r",
+                    "\r",
+                    "storeLinha.removeAll();\r",
+                    "storeLinha.getProxy().setExtraParam('numero', dadosLinha.numeroLinha);\r",
+                    "\r",
+                    "\r",
+                    "storeLinha.load({\r",
+                    "    scope: this,\r",
+                    "    callback: function(registro) {\r",
+                    "\r",
+                    "        //Guarda o numero pesquisado\r",
+                    "        numeroPesquisado = this.getLinhaView().getValues().numeroLinha;\r",
+                    "\r",
+                    "        //Exibe a tela de formulário do linha\r",
+                    "        this.getNavHome().push({\r",
+                    "            xtype: 'linhaform',\r",
+                    "            title: 'Linha: ' + numeroPesquisado\r",
+                    "        });\r",
+                    "\r",
+                    "        //Verifica se a consulta retornou alguma linha\r",
+                    "        if(registro[0]){//Linha encontrada\r",
+                    "\r",
+                    "            //Altera o campo instructions do fieldset\r",
+                    "            //Ext.getCmp('fieldPesquisaLinha').setInstructions('Linha cadastrada!   ;)');\r",
+                    "            Ext.getCmp('lblLinhaStatusPesquisa').setHtml('Linha já cadastrada!   ;)');\r",
+                    "\r",
+                    "            //Preenche os campos com o resultado da pesquisa\r",
+                    "            this.getLinhaForm().setValues(registro[0].data);\r",
+                    "\r",
+                    "            //Exibe os botões de 'opções'\r",
+                    "            Ext.getCmp('opcoesLinha').setHidden(false);\r",
+                    "\r",
+                    "            //Habilita os botões de 'opções'\r",
+                    "            Ext.getCmp('btnLinhaLocalizacao').setDisabled(false);\r",
+                    "            Ext.getCmp('btnLinhaOcorrencia').setDisabled(false);\r",
+                    "            Ext.getCmp('btnLinhaEditar').setDisabled(false);\r",
+                    "            Ext.getCmp('btnLinhaDetalhe').setDisabled(false);\r",
+                    "\r",
+                    "            //Desabilita os campos para edição\r",
+                    "            Ext.getCmp('txtLinhaOrigem').setDisabled(true);\r",
+                    "            Ext.getCmp('txtLinhaDestino').setDisabled(true);\r",
+                    "            Ext.getCmp('txtLinhaVia').setDisabled(true);\r",
+                    "\r",
+                    "            //Oculta o botão de 'Salvar'\r",
+                    "            Ext.getCmp('btnSalvarLinha').setHidden(true);\r",
+                    "\r",
+                    "            Ext.getCmp('formLinha').setHidden(false);\r",
+                    "\r",
+                    "        }else{//Linha não encontrado\r",
+                    "\r",
+                    "            //Guarda o numero pesquisado\r",
+                    "            numeroPesquisado = this.getLinhaView().getValues().numeroLinha;\r",
+                    "\r",
+                    "            //Limpa os campos do formulário\r",
+                    "            Ext.getCmp('linhaView').reset();\r",
+                    "\r",
+                    "            //Preenche os campo 'Numero do linha' com o numero pesquisado\r",
+                    "            Ext.getCmp('numeroLinha').setValue(numeroPesquisado);\r",
+                    "            Ext.getCmp('txtNumeroLinha').setValue(numeroPesquisado);\r",
+                    "\r",
+                    "            //Altera o campo instructions do fieldset\r",
+                    "            //Ext.getCmp('fieldPesquisaLinha').setInstructions('Linha não cadastrada!   :(');\r",
+                    "            Ext.getCmp('lblLinhaStatusPesquisa').setHtml('Linha não cadastrada!   :(');\r",
+                    "\r",
+                    "            //Exibe os botões de 'opções'\r",
+                    "            Ext.getCmp('opcoesLinha').setHidden(true);\r",
+                    "\r",
+                    "            //Disabilita os botões de 'opções'\r",
+                    "            Ext.getCmp('btnLinhaLocalizacao').setDisabled(true);\r",
+                    "            Ext.getCmp('btnLinhaOcorrencia').setDisabled(true);\r",
+                    "            Ext.getCmp('btnLinhaEditar').setDisabled(true);\r",
+                    "            Ext.getCmp('btnLinhaDetalhe').setDisabled(true);\r",
+                    "\r",
+                    "            //Habilita os campos para edição            \r",
+                    "            Ext.getCmp('txtLinhaOrigem').setDisabled(false);\r",
+                    "            Ext.getCmp('txtLinhaDestino').setDisabled(false);\r",
+                    "            Ext.getCmp('txtLinhaVia').setDisabled(false);\r",
+                    "\r",
+                    "            //Exibe o botão de 'Salvar'\r",
+                    "            Ext.getCmp('btnSalvarLinha').setHidden(false);\r",
+                    "\r",
+                    "            //Exibe o formulário\r",
+                    "            Ext.getCmp('formLinha').setHidden(false);\r",
+                    "        }\r",
+                    "\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "linha #btnLinhaPesquisar"
+            },
+            "designerId": "58c25f5d-d17d-49d6-8d32-fd517d11ed92"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "exibeOcorrencia",
+                "fn": "exibeOcorrencia",
+                "implHandler": [
+                    "//console.log(Ext.Viewport.getActiveItem());\r",
+                    "\r",
+                    "this.getNavHome().push({\r",
+                    "    xtype: 'ocorrencia',\r",
+                    "    title: 'Ocorrencia'\r",
+                    "});\r",
+                    "numeroOnibus = this.getOnibusView().getValues().numeroOnibus;\r",
+                    "Ext.getCmp('lblInformacaoOcorrencia').setHtml('Onibus: ' + numeroOnibus);\r",
+                    "Ext.getCmp('opcoesOnibus').setPressedButtons(Ext.getCmp('btnOnibusHidden'));\r",
+                    "\r",
+                    "//Controla a exibição dos componentes da tela\r",
+                    "Ext.getCmp('toolbarOcorrencia').setHidden(true);\r",
+                    "Ext.getCmp('lblInformacaoOcorrencia').setHidden(false);\r",
+                    "Ext.getCmp('ocorrenciaOrigem').setHidden(true);\r",
+                    "\r",
+                    "//Seta o valor do select field (oculto na tela) com o codigo para onibus\r",
+                    "Ext.getCmp('selectOcorrenciaOrigem').setValue(3);"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "onibusform #btnOnibusOcorrencia"
+            },
+            "designerId": "61ea1c7e-c214-43ea-870f-b2853dae276a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "exibeOcorrenciaLinha",
+                "fn": "exibeOcorrenciaLinha",
+                "implHandler": [
+                    "//console.log(Ext.Viewport.getActiveItem());\r",
+                    "\r",
+                    "this.getNavHome().push({\r",
+                    "    xtype: 'ocorrencia',\r",
+                    "    title: 'Ocorrencia'\r",
+                    "});\r",
+                    "\r",
+                    "numeroLinha = this.getLinhaView().getValues().numeroLinha;\r",
+                    "Ext.getCmp('lblInformacaoOcorrencia').setHtml('Linha: ' + numeroLinha);\r",
+                    "Ext.getCmp('opcoesLinha').setPressedButtons(Ext.getCmp('btnLinhaHidden'));\r",
+                    "\r",
+                    "//Controla a exibição dos componentes da tela\r",
+                    "Ext.getCmp('toolbarOcorrencia').setHidden(true);\r",
+                    "Ext.getCmp('lblInformacaoOcorrencia').setHidden(false);\r",
+                    "Ext.getCmp('ocorrenciaOrigem').setHidden(true);\r",
+                    "\r",
+                    "//Seta o valor do select field (oculto na tela) com o codigo para onibus\r",
+                    "Ext.getCmp('selectOcorrenciaOrigem').setValue(1);"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "linhaform #btnLinhaOcorrencia"
+            },
+            "designerId": "7980dbc4-1d6f-42d4-b8c6-6522e05923a4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "selecionaEmpresa",
+                "fn": "selecionaEmpresa",
+                "implHandler": [
+                    "this.getNavegador().push({\r",
+                    "    xtype: 'mapa',\r",
+                    "    title: 'Mapae'\r",
+                    "});"
+                ],
+                "name": "disclose",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "empresa"
+            },
+            "designerId": "3106a85c-c9ef-4bd0-bc32-92e09d347463"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "navegadorLinha",
+                "ref": "navegadorLinha",
+                "selector": "navegadorlinha"
+            },
+            "designerId": "f4cea97c-2ef9-4db2-be57-26a73a84666c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "linhaView",
+                "ref": "linhaView",
+                "selector": "#linhaView"
+            },
+            "designerId": "98941f5b-fff9-486d-82ea-33f7958601f2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "linhaForm",
+                "ref": "linhaForm",
+                "selector": "#linhaForm"
+            },
+            "designerId": "ba2c27f0-5d3c-4fe7-9215-d52501bf8ffe"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onListItemTap",
+                "fn": "onListItemTap",
+                "implHandler": [
+                    "this.getNavHome().push({\r",
+                    "    xtype: record.data.view,\r",
+                    "    title: record.data.item\r",
+                    "});"
+                ],
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "menu"
+            },
+            "designerId": "26b71f20-f46d-4942-a006-d0df1f67e66f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "navHome",
+                "ref": "navHome",
+                "selector": "navhome"
+            },
+            "designerId": "805e0db4-5fe3-4b6e-8397-cafc9f635ff5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "exibeMapaLinha",
+                "fn": "exibeMapaLinha",
+                "implHandler": [
+                    "numeroLinha = this.getLinhaView().getValues().numeroLinha;\r",
+                    "this.getNavHome().push({\r",
+                    "    xtype: 'linhamapa',\r",
+                    "    title: 'Mapeamento'\r",
+                    "});\r",
+                    "\r",
+                    "//Desmarca o botão de detalhes\r",
+                    "Ext.getCmp('opcoesLinha').setPressedButtons(Ext.getCmp('btnLinhaHidden'));\r",
+                    "Ext.getCmp('opcoesAdicionarPontos').setPressedButtons(Ext.getCmp('btnExibePontosHidden'));\r",
+                    "\r",
+                    "mapaLinha = this.getMapa()._map;\r",
+                    "\r",
+                    "mapaLinha.setZoom(13);\r",
+                    "\r",
+                    "var storePontosPorLinha = Ext.create('Ubibus.store.Itinerarios');\r",
+                    "\r",
+                    "storePontosPorLinha.getProxy().setExtraParam('numero', numeroLinha);\r",
+                    "//console.log('Linha numero: ' + numeroLinha);\r",
+                    "\r",
+                    "idsLinhas = [];\r",
+                    "\r",
+                    "var iconeIda = 'https://chart.googleapis.com/chart?chst=d_map_spin&chld=0.6|0|00E64D|12|_|';\r",
+                    "var iconeVolta = 'https://chart.googleapis.com/chart?chst=d_map_spin&chld=0.6|0|FD7567|12|_|';\r",
+                    "//var iconeIdaVolta = 'https://chart.googleapis.com/chart?chst=d_map_spin&chld=0.6|0|FF9900|12|_|';\r",
+                    "var iconeIdaVolta = 'https://chart.googleapis.com/chart?chst=d_map_spin&chld=0.6|0|6991FD|12|_|';\r",
+                    "var iconeOrigem = 'http://maps.google.com/mapfiles/dd-start.png';\r",
+                    "var iconeDestino = 'http://maps.google.com/mapfiles/dd-end.png';\r",
+                    "\r",
+                    "storePontosPorLinha.load({\r",
+                    "    scope: this,\r",
+                    "    callback: function(records) {      \r",
+                    "\r",
+                    "        if(ids){\r",
+                    "            for (var i = 0; i < ids.length; i++) {\r",
+                    "                markers[ids[i]].setMap(null);            \r",
+                    "            }\r",
+                    "        }\r",
+                    "\r",
+                    "\r",
+                    "        if(records.length > 0){          \r",
+                    "            //var aux = 0;\r",
+                    "\r",
+                    "            for (var i = 0; i <  records.length; i++) {                \r",
+                    "\r",
+                    "                var ponto = records[i].data;\r",
+                    "                var m = markers[ponto.id_ponto];\r",
+                    "                m.setMap(mapaLinha);\r",
+                    "\r",
+                    "                if(ponto.sequencia){                    \r",
+                    "\r",
+                    "                    m.setIcon(iconeIda + ponto.sequencia);\r",
+                    "                    m.sequencia = ponto.sequencia;\r",
+                    "\r",
+                    "                }else{\r",
+                    "                    m.setIcon('http://maps.google.com/mapfiles/marker_orange.png');\r",
+                    "                }\r",
+                    "                if(ponto.id_ponto_anterior){\r",
+                    "                    m.posicao = ponto.id_ponto_anterior;\r",
+                    "                }else{\r",
+                    "                    m.posicao = 'x';                    \r",
+                    "                }\r",
+                    "\r",
+                    "                idsLinhas.push(ponto.id_ponto);                \r",
+                    "            }\r",
+                    "\r",
+                    "            idLinha = records[0].data.id_linha;\r",
+                    "            idPontoAnterior = 0;\r",
+                    "\r",
+                    "        }else{\r",
+                    "            Ext.Msg.alert('Ajude-nos', 'Ainda não há pontos informados para esta linha', Ext.emptyFn);\r",
+                    "\r",
+                    "        }\r",
+                    "\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "linhaform #btnLinhaDetalhe"
+            },
+            "designerId": "268a489d-bce8-49e7-9b06-9a2fb1ac9e0e"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "pontodetalhe",
+                "ref": "pontodetalhe",
+                "selector": "pontodetalhe"
+            },
+            "designerId": "3fe63e05-a875-48b1-a5a1-0ddc14e69850"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "sugereItinerario",
+                "fn": "sugereItinerario",
+                "implHandler": [
+                    "//Cria o model com os dados da linha sugerida\r",
+                    "var dados = Ext.create('model.itinerario', {\r",
+                    "    numero: Ext.getCmp('txtItinerarioNumeroLinha').getValue(),\r",
+                    "    id_ponto: pontoAtual\r",
+                    "});\r",
+                    "\r",
+                    "//Cria uma instancia da store\r",
+                    "var store = Ext.create('store.itinerarios');\r",
+                    "\r",
+                    "//Adiciona o model a store e envia pro servidor\r",
+                    "store.add(dados);        \r",
+                    "store.sync();\r",
+                    "\r",
+                    "Ext.getCmp('txtItinerarioNumeroLinha').setValue('');\r",
+                    "Ext.getCmp('btnItinerarioSugerir').setHidden(true);\r",
+                    "\r",
+                    "//Atualizando a store da exibida na tela\r",
+                    "//this.getListalinhas().getStore().add(dados);\r",
+                    "var store = this.getListalinhas().getStore();\r",
+                    "\r",
+                    "store.getProxy().setExtraParam('id_ponto', pontoAtual);\r",
+                    "\r",
+                    "store.load();\r",
+                    "store.clearFilter();\r",
+                    "//console.log(this.getListalinhas().getStore());"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "pontodetalhe #btnItinerarioSugerir"
+            },
+            "designerId": "28af315b-da17-403f-91b4-8f704254e6c2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "listalinhas",
+                "ref": "listalinhas",
+                "selector": "listalinhas"
+            },
+            "designerId": "35340101-0d34-4f52-8c26-73d0a3850119"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "exibeOcorrenciaPonto",
+                "fn": "exibeOcorrenciaPonto",
+                "implHandler": [
+                    "this.getNavHome().push({\r",
+                    "    xtype: 'ocorrencia',\r",
+                    "    title: 'Ocorrencia'\r",
+                    "});\r",
+                    "\r",
+                    "Ext.getCmp('lblInformacaoOcorrencia').setHtml('Ponto: ' + pontoAtual);\r",
+                    "Ext.getCmp('opcoesPontoLinha').setPressedButtons(Ext.getCmp('btnPontoHidden'));\r",
+                    "\r",
+                    "//Controla a exibição dos componentes da tela\r",
+                    "Ext.getCmp('toolbarOcorrencia').setHidden(true);\r",
+                    "Ext.getCmp('lblInformacaoOcorrencia').setHidden(false);\r",
+                    "Ext.getCmp('ocorrenciaOrigem').setHidden(true);\r",
+                    "\r",
+                    "//Seta o valor do select field (oculto na tela) com o codigo para onibus\r",
+                    "Ext.getCmp('selectOcorrenciaOrigem').setValue(2);"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "pontodetalhe #btnPontoOcorrencia"
+            },
+            "designerId": "1371c00a-3d9d-4316-a757-dcf7470b1c6b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "mapa",
+                "ref": "mapa",
+                "selector": "mapa"
+            },
+            "designerId": "24ba2948-5eb0-461c-bd03-2bfccbd8dc75"
+        }
+    ]
+}

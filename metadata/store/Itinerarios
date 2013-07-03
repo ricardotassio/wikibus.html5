@@ -1,0 +1,69 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Itinerarios",
+        "designer|userAlias": "itinerarios",
+        "autoLoad": false,
+        "autoSync": false,
+        "model": "Itinerario",
+        "storeId": "itinerarios"
+    },
+    "id": "ExtBox1-ext-gen79444",
+    "designerId": "4bd9c710-aff8-4f7c-924c-5b92ac88bf3d",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy4",
+                "api": [
+                    "{\r",
+                    "    create: 'php/itinerario/criaItinerario.php',\r",
+                    "    read: 'php/itinerario/listaItinerario.php',\r",
+                    "    update: 'php/itinerario/atualizaItinerario.php',\r",
+                    "    destroy: 'php/itinerario/deletaItinerario.php'\r",
+                    "}"
+                ]
+            },
+            "designerId": "a9e65fe7-7a5d-461e-b405-f33a916d926c",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader4",
+                        "rootProperty": "itinerarios"
+                    },
+                    "designerId": "43b8d6ba-69aa-4b45-9565-5ba1450a2f1a"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter4",
+                        "encode": true,
+                        "rootProperty": "itinerarios"
+                    },
+                    "designerId": "7420a6a5-2b65-411e-bfd9-231f57ea4ce7"
+                }
+            ]
+        }
+    ]
+}

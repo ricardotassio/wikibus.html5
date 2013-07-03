@@ -1,0 +1,125 @@
+{
+    "type": "navigationview",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "title": "Ubibus",
+        "designer|userClassName": "NavHome",
+        "designer|userAlias": "navhome",
+        "html": null,
+        "id": "home-view",
+        "ui": "",
+        "defaultBackButtonText": "Voltar",
+        "useTitleForBackButtonText": true
+    },
+    "id": "ExtBox1-ext-gen47364",
+    "designerId": "897564a4-fff6-4949-bfc6-2ca37d249238",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "title",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Ubibus"
+            },
+            "designerId": "1dae0e83-8339-4e5c-a6bc-f982d782d7a8",
+            "masterInstanceId": "ExtBox1-ext-gen65731"
+        },
+        {
+            "type": "navigationbar",
+            "reference": {
+                "name": "navigationBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyNavigationBar",
+                "id": "navHomeBar"
+            },
+            "designerId": "7d1f8d05-1557-444b-907c-8c60e62c94d1",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "designer|userClassName": "MyButton35",
+                        "hidden": true,
+                        "id": "btnNavConfig",
+                        "itemId": "mybutton35",
+                        "iconCls": "settings",
+                        "iconMask": true,
+                        "pressedCls": null,
+                        "text": ""
+                    },
+                    "designerId": "fa0f667c-541a-4163-b593-b302d2aca298",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onBtnNavConfigTap",
+                                "fn": "onBtnNavConfigTap",
+                                "implHandler": [
+                                    "var tela = Ext.getCmp('home-view').getActiveItem().id;\r",
+                                    "\r",
+                                    "switch(tela){\r",
+                                    "    case 'ponto':\r",
+                                    "    Ext.getCmp('toolbarPonto').setHidden(!Ext.getCmp('toolbarPonto').getHidden());\r",
+                                    "    break;\r",
+                                    "    case 'painelLinha':\r",
+                                    "    Ext.getCmp('toolbarPonto').setHidden(!Ext.getCmp('toolbarPonto').getHidden());\r",
+                                    "\r",
+                                    "    break;\r",
+                                    "}"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "cab76381-aae7-4778-bd13-ebd81ee39d0a"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "designer|userClassName": "MyButton36",
+                        "hidden": true,
+                        "id": "btnNavAdicionarEmpresa",
+                        "itemId": "mybutton36",
+                        "iconCls": "add",
+                        "iconMask": true,
+                        "text": ""
+                    },
+                    "designerId": "8a988fa5-d1c8-469d-a526-fc800d9cdb40"
+                }
+            ]
+        }
+    ]
+}

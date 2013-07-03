@@ -1,0 +1,104 @@
+{
+    "type": "tabpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Viewport",
+        "designer|userAlias": "viewport",
+        "designer|initialView": true
+    },
+    "id": "ExtBox1-ext-gen6005",
+    "designerId": "eb16d93d-62e3-44b6-8995-a02aa3e5dcc4",
+    "cn": [
+        {
+            "type": "tabbar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTabBar",
+                "docked": "bottom"
+            },
+            "designerId": "ee2e4dfa-6612-4ce2-b571-bfe585f2552e"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "home"
+            },
+            "designerId": "37d94386-eaa4-4a31-a82c-3a9d679101bb",
+            "masterInstanceId": "ExtBox1-ext-gen47364"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Ocorrência",
+                "iconCls": "info"
+            },
+            "designerId": "8fb8aa2d-6484-435b-a27d-4c0258bd75fd",
+            "masterInstanceId": "ExtBox1-ext-gen15672"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Usuário",
+                "iconCls": "user"
+            },
+            "designerId": "40701553-57be-4dc8-a413-08a28e4a7380",
+            "masterInstanceId": "ExtBox1-ext-gen13252"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "title": "Indicadores",
+                "iconCls": "more"
+            },
+            "designerId": "248d789c-c0c5-4b6a-917b-7df40085bb7c",
+            "masterInstanceId": "ExtBox1-ext-gen88406"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTabpanelInitialize",
+                "fn": "onTabpanelInitialize",
+                "implHandler": [
+                    "telaAtual = 'home';\r",
+                    "ids = [];"
+                ],
+                "name": "initialize"
+            },
+            "designerId": "debea7c3-1c4b-482d-9243-550a469388cc"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+.x-title .x-innerhtml:after {
+    content: '';
+    display: inline-block;
+    width: .3em;
+}

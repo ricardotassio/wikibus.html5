@@ -1,0 +1,118 @@
+{
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Empresas",
+        "designer|userAlias": "empresas",
+        "autoLoad": true,
+        "autoSync": false,
+        "model": "Empresa",
+        "storeId": "empresa"
+    },
+    "id": "ExtBox1-ext-gen3633",
+    "designerId": "634fd02c-608f-4940-8055-2167a75f84b0",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy",
+                "batchActions": null,
+                "api": [
+                    "{\r",
+                    "    create: 'php/empresa/criaEmpresa.php',\r",
+                    "    read: 'php/empresa/listaEmpresas.php',\r",
+                    "    update: 'php/empresa/atualizaEmpresa.php',\r",
+                    "    destroy: 'php/empresa/deletaEmpresa.php'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "db23e8e6-e2fd-413d-b145-5f782279cce6",
+            "cn": [
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter",
+                        "nameProperty": null,
+                        "encode": true,
+                        "rootProperty": "empresas"
+                    },
+                    "designerId": "03297105-85f1-46a4-ae8e-9940c0f53df5"
+                },
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader",
+                        "rootProperty": "empresas"
+                    },
+                    "designerId": "ef6e4b72-1a7c-49be-908c-9186401ffb15"
+                }
+            ]
+        },
+        {
+            "type": "grouper",
+            "reference": {
+                "name": "grouper",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGrouper"
+            },
+            "designerId": "e09c2254-e687-454d-9518-5eea4668546a",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "groupFn",
+                        "fn": "groupFn",
+                        "designer|params": [
+                            "record"
+                        ],
+                        "implHandler": [
+                            "return record.get('nome')[0];"
+                        ]
+                    },
+                    "designerId": "9eaf9036-7698-4e66-b945-bed9dd5d8bcb"
+                }
+            ]
+        },
+        {
+            "type": "sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySorter",
+                "property": "nome"
+            },
+            "designerId": "ef91b468-0f0d-45b3-b071-e63e06f87a37"
+        }
+    ]
+}

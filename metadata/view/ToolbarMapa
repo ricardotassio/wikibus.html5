@@ -1,0 +1,418 @@
+{
+    "type": "toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "center",
+        "container|pack": "center",
+        "designer|userClassName": "ToolbarMapa",
+        "designer|userAlias": "toolbarmapa",
+        "docked": "top",
+        "hidden": true,
+        "id": "toolbarPonto",
+        "style": null,
+        "ui": "outro",
+        "title": ""
+    },
+    "id": "ExtBox1-ext-gen2090",
+    "designerId": "03f3a496-0e4b-458f-9c82-c55e97880f61",
+    "cn": [
+        {
+            "type": "segmentedbutton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "container|pack": "center",
+                "designer|userClassName": "MySegmentedButton6",
+                "docked": null,
+                "id": "opcoesCentralizaMapa",
+                "itemId": "mysegmentedbutton6",
+                "allowDepress": true,
+                "pressedCls": "x-button-unpressed"
+            },
+            "designerId": "3f7137ac-92ec-4a76-8720-abe21d9ba183",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton29",
+                        "id": "btnCentralizaMapa",
+                        "ui": "action",
+                        "iconCls": "locate",
+                        "iconMask": true,
+                        "text": null
+                    },
+                    "designerId": "a1670e35-09b7-4664-903c-e010cd28c0e6"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "centralizaMapa",
+                        "fn": "centralizaMapa",
+                        "implHandler": [
+                            "//if(button.id == 'btnCentralizaMapa' && isPressed){\r",
+                            "navigator.geolocation.getCurrentPosition(function(position) {\r",
+                            "    var pos = new google.maps.LatLng(position.coords.latitude,\r",
+                            "    position.coords.longitude);\r",
+                            "    latLng = pos;\r",
+                            "\r",
+                            "    //Centraliza mapa\r",
+                            "    MAPA.setCenter(pos);\r",
+                            "\r",
+                            "});\r",
+                            "//}"
+                        ],
+                        "name": "toggle"
+                    },
+                    "designerId": "454d2d8e-71b7-4f51-aaf4-bd7384b14cb1"
+                }
+            ]
+        },
+        {
+            "type": "spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySpacer5",
+                "docked": null,
+                "width": 5
+            },
+            "designerId": "7675c622-11e3-423d-acbf-dff5683d22bd"
+        },
+        {
+            "type": "segmentedbutton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "designer|userClassName": "MySegmentedButton5",
+                "docked": null,
+                "id": "opcoesAdicionarPontos",
+                "itemId": "mysegmentedbutton5",
+                "allowDepress": true
+            },
+            "designerId": "2fbeaa76-9fad-42c9-93bb-dd10f820ab1d",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "pressed": true,
+                        "designer|userClassName": "MyButton19",
+                        "docked": null,
+                        "id": "btnExibePontos",
+                        "ui": "action",
+                        "iconCls": "download",
+                        "iconMask": true,
+                        "text": null
+                    },
+                    "designerId": "56e91477-0e13-4ab9-9da6-2f18308209ae"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onMysegmentedbutton5Toggle",
+                        "fn": "onMysegmentedbutton5Toggle",
+                        "implHandler": [
+                            "// função para mostrar e esconder os pontos do mapa\r",
+                            "for (var i = 0; i < ids.length; i++) {\r",
+                            "    if (isPressed) {\r",
+                            "        markers[ids[i]].setMap(MAPA)\r",
+                            "    } else {\r",
+                            "        markers[ids[i]].setMap(null)\r",
+                            "    }\r",
+                            "}\r",
+                            "        \r",
+                            "        \r",
+                            "switch(telaAtual){\r",
+                            "    case 'ponto':\r",
+                            "        break;\r",
+                            "    case 'linha':\r",
+                            "        \r",
+                            "        for (var i = 0; i < idsLinhas.length; i++) {\r",
+                            "            markers[idsLinhas[i]].setMap(MAPA);            \r",
+                            "        }\r",
+                            "        \r",
+                            "        break;\r",
+                            "}\r",
+                            ""
+                        ],
+                        "name": "toggle"
+                    },
+                    "designerId": "a9034fcb-f1dd-481c-8f1d-c6abfc5ee0e9"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton39",
+                        "hidden": true,
+                        "id": "btnExibePontosHidden",
+                        "text": "MyButton39"
+                    },
+                    "designerId": "b1a636ce-70d4-4caa-9eff-95a6804644d6"
+                }
+            ]
+        },
+        {
+            "type": "spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySpacer5",
+                "docked": null,
+                "width": 5
+            },
+            "designerId": "76cafa51-0bd5-47e5-9d77-de82322f545c"
+        },
+        {
+            "type": "segmentedbutton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySegmentedButton3",
+                "id": "opcoesMapaPonto",
+                "itemId": "mysegmentedbutton3",
+                "allowDepress": true
+            },
+            "designerId": "cea7ee68-34b2-4363-a4e3-007e1efca0a0",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton10",
+                        "id": "btnAtivaAdicao",
+                        "ui": "action",
+                        "iconCls": "add",
+                        "iconMask": true,
+                        "text": null
+                    },
+                    "designerId": "a622f7ce-6d2f-4264-8aed-ef580e947cd5"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onOpcoesMapaPontoToggle",
+                        "fn": "onOpcoesMapaPontoToggle",
+                        "implHandler": [
+                            "if(button.id == 'btnBuscaPontos' && isPressed){\r",
+                            "    //Exibe promp de confirmação\r",
+                            "    Ext.Msg.prompt(null, \r",
+                            "    'Informe um local:',\r",
+                            "    function(btn, text){\r",
+                            "        if(btn == 'ok'){\r",
+                            "            geocoder = new google.maps.Geocoder();\r",
+                            "\r",
+                            "            var address = text;\r",
+                            "\r",
+                            "            geocoder.geocode( { 'address': address}, function(results, status) {\r",
+                            "            if (status == google.maps.GeocoderStatus.OK) {\r",
+                            "                MAPA.setCenter(results[0].geometry.location);\r",
+                            "                MAPA.setZoom(16);\r",
+                            "\r",
+                            "            } else {\r",
+                            "                alert('Geocode was not successful for the following reason: ' + status);\r",
+                            "            }\r",
+                            "        });\r",
+                            "\r",
+                            "    }\r",
+                            "},\r",
+                            "this, false, '', {placeHolder: 'Ex: Brotas, Salvador, BA'});\r",
+                            "}"
+                        ],
+                        "name": "toggle"
+                    },
+                    "designerId": "5feb94df-501a-47c8-9e2c-463f962333ff"
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton21",
+                "id": "btnBuscaPontos",
+                "itemId": "mybutton11",
+                "ui": "action",
+                "iconCls": "search",
+                "iconMask": true,
+                "text": null
+            },
+            "designerId": "23371aa0-dad9-45b6-a3aa-5723b4c14797",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onBtnBuscaPontosTap",
+                        "fn": "onBtnBuscaPontosTap",
+                        "implHandler": [
+                            "//Exibe promp de confirmação\r",
+                            "Ext.Msg.prompt(null, \r",
+                            "'Informe um local:',\r",
+                            "function(btn, text){\r",
+                            "    if(btn == 'ok'){\r",
+                            "        geocoder = new google.maps.Geocoder();\r",
+                            "\r",
+                            "        var address = text;\r",
+                            "\r",
+                            "        geocoder.geocode( { 'address': address}, function(results, status) {\r",
+                            "        if (status == google.maps.GeocoderStatus.OK) {\r",
+                            "            MAPA.setCenter(results[0].geometry.location);\r",
+                            "            MAPA.setZoom(16);\r",
+                            "\r",
+                            "        } else {\r",
+                            "            //alert('Geocode was not successful for the following reason: ' + status);\r",
+                            "            Ext.Msg.alert('Desculpa:', 'Não foi possível achar o endereço solicitado!', Ext.emptyFn);\r",
+                            "        }\r",
+                            "    });\r",
+                            "\r",
+                            "}\r",
+                            "},\r",
+                            "this, false, '', {placeHolder: 'Ex: Brotas, Salvador, BA'});"
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "2b328e2d-bed3-41ed-a715-ef8c76106e75"
+                }
+            ]
+        },
+        {
+            "type": "spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySpacer5",
+                "docked": null,
+                "width": 5
+            },
+            "designerId": "440e5db7-4416-4e9e-93fd-ba9f8a948db8"
+        },
+        {
+            "type": "segmentedbutton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "container|pack": "center",
+                "designer|userClassName": "MySegmentedButton9",
+                "docked": null,
+                "hidden": true,
+                "id": "opcoesMapaLinha",
+                "itemId": "mysegmentedbutton2"
+            },
+            "designerId": "4eb49dde-1a55-4fbb-b49e-88314fdfb797",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton34",
+                        "docked": null,
+                        "id": "btnRota",
+                        "ui": "confirm",
+                        "badgeText": "Iniciar",
+                        "iconCls": "maps",
+                        "iconMask": true,
+                        "text": "Rotaaa"
+                    },
+                    "designerId": "d4158fb5-b67b-4322-b225-0dcfeeda463b"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onOpcoesMapaLinhaToggle",
+                        "fn": "onOpcoesMapaLinhaToggle",
+                        "implHandler": [
+                            "if(isPressed){\r",
+                            "    Ext.getCmp(button.setBadgeText('Parar'));\r",
+                            "    contadorLinha = 0;\r",
+                            "    idPontoAnterior = 0;\r",
+                            "}\r",
+                            "else{\r",
+                            "    Ext.getCmp(button.setBadgeText('Iniciar'));\r",
+                            "}"
+                        ],
+                        "name": "toggle"
+                    },
+                    "designerId": "7f84052b-e8f3-4c05-9fef-444d3ecbed1b"
+                }
+            ]
+        }
+    ]
+}

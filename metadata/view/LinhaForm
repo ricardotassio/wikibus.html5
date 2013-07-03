@@ -1,0 +1,338 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LinhaForm",
+        "designer|userAlias": "linhaform",
+        "id": "linhaForm"
+    },
+    "id": "ExtBox1-ext-gen15645",
+    "designerId": "02c1b33e-41ec-480d-92af-a7b35ae590c2",
+    "cn": [
+        {
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyLabel2",
+                "docked": null,
+                "html": "status da pesquisa",
+                "id": "lblLinhaStatusPesquisa",
+                "style": "text-align:center;margin-top:-10px;font-style: italic;"
+            },
+            "designerId": "22916338-3360-488d-8e38-669cd7510c25"
+        },
+        {
+            "type": "spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySpacer",
+                "height": 5
+            },
+            "designerId": "49fd98bf-44e3-4f9f-bd76-f910c62d0a0f"
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyContainer",
+                "id": "formLinha"
+            },
+            "designerId": "77cbf9e9-5665-4913-8f10-d2ea6e297dd8",
+            "cn": [
+                {
+                    "type": "segmentedbutton",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "designer|userClassName": "MySegmentedButton",
+                        "hidden": true,
+                        "id": "opcoesLinha",
+                        "itemId": "mysegmentedbutton1",
+                        "style": null,
+                        "defaults": [
+                            "    {disabled: false}"
+                        ],
+                        "allowDepress": true
+                    },
+                    "designerId": "5d32bb91-c7ea-4d01-baa4-46d00b9391f8",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton2",
+                                "id": "btnLinhaOcorrencia",
+                                "badgeText": "",
+                                "iconCls": "info",
+                                "iconMask": true,
+                                "text": ""
+                            },
+                            "designerId": "c55d6c92-9afe-4266-95d7-b262e9a4b564"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton1",
+                                "hidden": true,
+                                "id": "btnLinhaLocalizacao",
+                                "iconCls": "locate",
+                                "iconMask": true,
+                                "text": ""
+                            },
+                            "designerId": "a3c93e63-07ce-47d1-b645-8d8c736d40da"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton22",
+                                "hidden": true,
+                                "id": "btnLinhaHidden",
+                                "text": null
+                            },
+                            "designerId": "22a8ffb8-ea92-47c0-8e32-3c5ca7ab7e82"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton2",
+                                "id": "btnLinhaFavorito",
+                                "iconCls": "star",
+                                "iconMask": true,
+                                "text": ""
+                            },
+                            "designerId": "11e5ac64-063f-4697-90d1-f0fd779d4c3d"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton2",
+                                "id": "btnLinhaEditar",
+                                "itemId": "mybutton10",
+                                "iconCls": "compose",
+                                "iconMask": true,
+                                "text": ""
+                            },
+                            "designerId": "66d2b219-70a1-4f5d-a886-71b18809ba2e"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton2",
+                                "id": "btnLinhaDetalhe",
+                                "iconCls": "maps",
+                                "iconMask": true,
+                                "text": ""
+                            },
+                            "designerId": "b33a3c4f-c6ac-4fa0-8b2e-a32cdc52ddff"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onOpcoesLinhaToggle",
+                                "fn": "onOpcoesLinhaToggle",
+                                "implHandler": [
+                                    "//Variavel que habilita os campos do formulario apenas quando 'btnLinhaEditar' estiver ativo\r",
+                                    "var habilitaCamposForm = true;\r",
+                                    "\r",
+                                    "switch(button.id)\r",
+                                    "{\r",
+                                    "    case 'btnLinhaLocalizacao':\r",
+                                    "        alert('de boa');\r",
+                                    "    //TODO\r",
+                                    "    break;\r",
+                                    "    case 'btnLinhaOcorrencia':\r",
+                                    "    //TODO\r",
+                                    "    break;\r",
+                                    "    case 'btnLinhaEditar':\r",
+                                    "    habilitaCamposForm = !isPressed;\r",
+                                    "    break;\r",
+                                    "    case 'btnLinhaDetalhe':\r",
+                                    "    //TODO\r",
+                                    "    break;\r",
+                                    "    default:         \r",
+                                    "}\r",
+                                    "\r",
+                                    "//Habilita os campos para edição\r",
+                                    "Ext.getCmp('txtLinhaOrigem').setDisabled(habilitaCamposForm);\r",
+                                    "Ext.getCmp('txtLinhaDestino').setDisabled(habilitaCamposForm);\r",
+                                    "Ext.getCmp('txtLinhaVia').setDisabled(habilitaCamposForm);\r",
+                                    "\r",
+                                    "\r",
+                                    "//Exibe o botão de 'Salvar'\r",
+                                    "Ext.getCmp('btnSalvarLinha').setHidden(habilitaCamposForm);"
+                                ],
+                                "name": "toggle"
+                            },
+                            "designerId": "c2aa3df8-b264-4383-b5ce-b0f13993fc67"
+                        }
+                    ]
+                },
+                {
+                    "type": "fieldset",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet",
+                        "id": "infoLinha",
+                        "defaults": [
+                            "{disabled: false}"
+                        ],
+                        "instructions": "Dados da linha",
+                        "title": "Informações"
+                    },
+                    "designerId": "eb4e6055-b1d2-4803-ba39-0a9fa271293c",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField",
+                                "disabled": true,
+                                "id": "txtNumeroLinha",
+                                "label": null,
+                                "labelWidth": "45%",
+                                "name": "numero",
+                                "placeHolder": "Número da linha"
+                            },
+                            "designerId": "54d85651-de37-445d-8248-ea38f9955aa3"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField",
+                                "disabled": true,
+                                "id": "txtLinhaOrigem",
+                                "label": null,
+                                "labelWidth": "45%",
+                                "name": "origem",
+                                "placeHolder": "Origem"
+                            },
+                            "designerId": "dbdd36f2-286e-4313-9b3d-50c3bb0c6b4e"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField",
+                                "disabled": true,
+                                "id": "txtLinhaDestino",
+                                "label": null,
+                                "labelWidth": "45%",
+                                "name": "destino",
+                                "placeHolder": "Destino"
+                            },
+                            "designerId": "e376bc8f-7860-4519-a245-b75f8d5b9705"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField",
+                                "disabled": true,
+                                "id": "txtLinhaVia",
+                                "label": null,
+                                "labelWidth": "45%",
+                                "name": "via",
+                                "placeHolder": "Via"
+                            },
+                            "designerId": "a105bed9-9d41-46a5-be85-a6552459bb0f"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton5",
+                        "id": "btnSalvarLinha",
+                        "style": "margin-top:-20px;",
+                        "ui": "confirm",
+                        "iconCls": null,
+                        "iconMask": true,
+                        "text": "Salvar"
+                    },
+                    "designerId": "7e3fe211-a552-471d-a7e5-1003a0ba24f6"
+                }
+            ]
+        }
+    ]
+}

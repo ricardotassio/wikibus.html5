@@ -1,0 +1,54 @@
+{
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Empresa",
+            "Onibus",
+            "Posicao",
+            "Ponto",
+            "Linha",
+            "Menu",
+            "Itinerario",
+            "Ocorrencia"
+        ],
+        "stores": [
+            "Empresas",
+            "Onibus",
+            "Pontos",
+            "Linha",
+            "Menu",
+            "Itinerarios"
+        ],
+        "views": [
+            "Empresa",
+            "Onibus",
+            "mapa",
+            "Linha",
+            "Ocorrencia",
+            "Ponto",
+            "Usuario",
+            "LinhaMapa",
+            "MenuPontos",
+            "Viewport",
+            "OnibusForm",
+            "LinhaForm",
+            "NavHome",
+            "Menu",
+            "Indicadores",
+            "ToolbarMapa",
+            "PontoDetalhe",
+            "ListaLinhas"
+        ],
+        "name": "Ubibus",
+        "controllers": [
+            "Main"
+        ]
+    },
+    "id": "ExtBox1-ext-gen1703",
+    "designerId": "application"
+}

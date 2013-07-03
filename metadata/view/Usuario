@@ -1,0 +1,221 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Usuario",
+        "designer|userAlias": "usuario",
+        "layout": "vbox"
+    },
+    "id": "ExtBox1-ext-gen13252",
+    "designerId": "41b284da-3521-44d8-80fd-b7ffa68aed19",
+    "cn": [
+        {
+            "type": "segmentedbutton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "start",
+                "container|pack": "center",
+                "designer|userClassName": "MySegmentedButton4",
+                "id": "opcoesUsuario",
+                "itemId": "mysegmentedbutton4",
+                "ui": "",
+                "allowDepress": false
+            },
+            "designerId": "974d48d0-e3f9-4e01-9f81-cd7e1b22d5c7",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "pressed": true,
+                        "designer|userClassName": "MyButton26",
+                        "id": "btnUsuarioLogar",
+                        "text": "Login"
+                    },
+                    "designerId": "b4b050d8-e44e-44f9-89dd-5ada033bf69f"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton27",
+                        "id": "btnUsuarioCadastrar",
+                        "text": "Cadastro"
+                    },
+                    "designerId": "1b5de419-47e6-446e-91ea-2c439eb241e1"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onOpcoesUsuarioToggle",
+                        "fn": "onOpcoesUsuarioToggle",
+                        "implHandler": [
+                            "switch(button.id)\r",
+                            "{\r",
+                            "    case 'btnUsuarioLogar':\r",
+                            "        Ext.getCmp('txtUsuarioNome').setHidden(true);\r",
+                            "        Ext.getCmp('txtUsuarioConfirmarSenha').setHidden(true);\r",
+                            "        Ext.getCmp('btnUsuarioConfirmar').setText('Logar');\r",
+                            "            \r",
+                            "        break;\r",
+                            "        \r",
+                            "    case 'btnUsuarioCadastrar':\r",
+                            "        Ext.getCmp('txtUsuarioNome').setHidden(false);\r",
+                            "        Ext.getCmp('txtUsuarioConfirmarSenha').setHidden(false);\r",
+                            "        Ext.getCmp('btnUsuarioConfirmar').setText('Cadastrar');\r",
+                            "        \r",
+                            "        break;\r",
+                            "        \r",
+                            "    default:         \r",
+                            "}"
+                        ],
+                        "name": "toggle"
+                    },
+                    "designerId": "f1d86622-e171-4822-8f93-7f881ab6415d"
+                }
+            ]
+        },
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet8",
+                "title": "Dados"
+            },
+            "designerId": "96915475-dac0-43c3-be58-4dc877313b1e",
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField2",
+                        "hidden": true,
+                        "id": "txtUsuarioNome",
+                        "label": null,
+                        "placeHolder": "Nome"
+                    },
+                    "designerId": "27b04fdd-3b1b-4855-a709-a4e1c33ba3b9"
+                },
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField2",
+                        "id": "txtUsuarioEmail",
+                        "label": null,
+                        "placeHolder": "E-mail"
+                    },
+                    "designerId": "a7955a8e-0e6b-4c25-8617-cd347741e474"
+                },
+                {
+                    "type": "passwordfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPasswordField",
+                        "id": "txtUsuarioSenha",
+                        "label": null,
+                        "placeHolder": "Senha"
+                    },
+                    "designerId": "575c9a80-b5b7-4a02-bdef-2a138c151fda"
+                },
+                {
+                    "type": "passwordfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPasswordField",
+                        "hidden": true,
+                        "id": "txtUsuarioConfirmarSenha",
+                        "label": "",
+                        "placeHolder": "Confirmar senha"
+                    },
+                    "designerId": "7e61ce8d-a008-4c50-a7c4-04463517263b"
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton28",
+                "id": "btnUsuarioConfirmar",
+                "itemId": null,
+                "style": "margin-top:-20px;",
+                "ui": "confirm",
+                "text": "Logar"
+            },
+            "designerId": "590413f5-059a-4323-acd0-942a3f071e50"
+        },
+        {
+            "type": "titlebar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTitleBar",
+                "docked": "top",
+                "title": "Usuários"
+            },
+            "designerId": "13b610e9-b5d8-4c1b-a216-c970115eb718"
+        },
+        {
+            "type": "spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySpacer4",
+                "height": 20
+            },
+            "designerId": "7ca51f86-0d12-4995-89a2-12b5f9a267ea"
+        }
+    ]
+}

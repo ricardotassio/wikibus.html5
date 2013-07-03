@@ -1,0 +1,30 @@
+{
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Indicadores",
+        "designer|userAlias": "indicadores"
+    },
+    "id": "ExtBox1-ext-gen88406",
+    "designerId": "46300fd9-0622-45d3-8439-fea9938e2087",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar7",
+                "docked": "top",
+                "title": "Indicadores"
+            },
+            "designerId": "51f2f8f6-9ef4-4031-b57f-9e7f40ee20de"
+        }
+    ]
+}

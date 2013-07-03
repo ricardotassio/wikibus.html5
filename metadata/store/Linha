@@ -1,0 +1,69 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Linha",
+        "designer|userAlias": "linha",
+        "autoSync": false,
+        "model": "Linha",
+        "storeId": "linha"
+    },
+    "id": "ExtBox1-ext-gen30195",
+    "designerId": "511d7166-8183-4614-b3d7-2da5e05e50ab",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy1",
+                "api": [
+                    "{\r",
+                    "    create: 'php/linha/criaLinha.php',\r",
+                    "    read: 'php/linha/listaLinha.php',\r",
+                    "    update: 'php/linha/atualizaLinha.php',\r",
+                    "    destroy: 'php/linha/deletaLinha.php'\r",
+                    "}"
+                ]
+            },
+            "designerId": "112ded48-8cb2-4559-a75b-df18ea0f39ce",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader1",
+                        "rootProperty": "linhas"
+                    },
+                    "designerId": "31d64307-8e36-4c69-adf1-b50f9c74c234"
+                },
+                {
+                    "type": "jsonwriter",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonWriter1",
+                        "writeAllFields": false,
+                        "encode": true,
+                        "rootProperty": "linhas"
+                    },
+                    "designerId": "ce28a989-3932-40ce-ba15-3552f2bc9c70"
+                }
+            ]
+        }
+    ]
+}

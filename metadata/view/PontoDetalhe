@@ -1,0 +1,385 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PontoDetalhe",
+        "designer|userAlias": "pontodetalhe",
+        "id": "pontoDetalhe",
+        "layout": "vbox"
+    },
+    "id": "ExtBox1-ext-gen39769",
+    "designerId": "edde6100-3a0e-452e-9af2-c6e186bb696b",
+    "cn": [
+        {
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyLabel2",
+                "docked": null,
+                "hidden": true,
+                "html": "status da pesquisa",
+                "id": "lblOnibusStatusPesquisa",
+                "style": "text-align:center;margin-top:-10px;font-style: italic;font-size:80%;font-weight:bold;"
+            },
+            "designerId": "e31aad11-21c7-4aa7-bc37-d5279e1dece1"
+        },
+        {
+            "type": "spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySpacer",
+                "height": 10
+            },
+            "designerId": "1207793a-18d3-459b-9492-a47e4bc24b76"
+        },
+        {
+            "type": "segmentedbutton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "container|pack": "center",
+                "designer|userClassName": "MySegmentedButton",
+                "id": "opcoesPontoLinha",
+                "itemId": "mysegmentedbutton1",
+                "defaults": [
+                    "    {disabled: false}"
+                ],
+                "allowDepress": true
+            },
+            "designerId": "d3c3d3bd-aea3-4eaf-bbee-c4dcc6be320f",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton2",
+                        "id": "btnPontoOcorrencia",
+                        "iconCls": "info",
+                        "iconMask": true,
+                        "text": ""
+                    },
+                    "designerId": "6924f268-783d-4116-9019-164623d9cc52"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton22",
+                        "hidden": true,
+                        "id": "btnPontoHidden",
+                        "text": null
+                    },
+                    "designerId": "b67b46fb-868b-4db5-897c-f3d801417362"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton2",
+                        "id": "btnPontoFavorito",
+                        "iconCls": "star",
+                        "iconMask": true,
+                        "text": ""
+                    },
+                    "designerId": "d09fc06f-717a-46e6-9cb2-bdabe1d17195"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton2",
+                        "id": "btnPontoEditar",
+                        "itemId": null,
+                        "iconCls": "search",
+                        "iconMask": true,
+                        "text": ""
+                    },
+                    "designerId": "cf93da48-e1e0-4079-b2f0-f000126d1204"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton2",
+                        "hidden": true,
+                        "id": "btnPontoPesquisarLinha",
+                        "iconCls": "search",
+                        "iconMask": true,
+                        "text": ""
+                    },
+                    "designerId": "da8aa2e6-57ca-4a76-8d4f-dd14fa22c09d"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onOpcoesOnibusToggle",
+                        "fn": "onOpcoesOnibusToggle",
+                        "implHandler": [
+                            "//Variavel que habilita os campos do formulario apenas quando 'btnPontoEditar' estiver ativo\r",
+                            "var habilitaCamposForm = true;\r",
+                            "switch(button.id)\r",
+                            "{\r",
+                            "    case 'btnPontoLocalizacao':\r",
+                            "    //TODO\r",
+                            "    break;\r",
+                            "    case 'btnPontoOcorrencia':\r",
+                            "    //TODO\r",
+                            "    break;\r",
+                            "    case 'btnPontoEditar':\r",
+                            "    habilitaCamposForm = !isPressed;\r",
+                            "    break;\r",
+                            "    case 'btnPontoDetalhe':\r",
+                            "    //TODO\r",
+                            "    break;\r",
+                            "    default:         \r",
+                            "}\r",
+                            "\r",
+                            "//Exibe o botão de 'Salvar'\r",
+                            "Ext.getCmp('containerPontoInfo').setHidden(habilitaCamposForm);\r",
+                            "\r",
+                            "var store = Ext.getCmp('listalinhas').getStore();\r",
+                            "store.clearFilter();\r",
+                            "\r",
+                            "Ext.getCmp('txtItinerarioNumeroLinha').setValue('');\r",
+                            "Ext.getCmp('btnItinerarioSugerir').setHidden(true);"
+                        ],
+                        "name": "toggle"
+                    },
+                    "designerId": "48fb2045-8a9b-434a-8d41-e8a4e1d95222"
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyContainer",
+                "height": 145,
+                "hidden": true,
+                "id": "containerPontoInfo",
+                "style": ""
+            },
+            "designerId": "f9d165d9-8fe5-42ce-bc72-b3ff2f7a81f5",
+            "cn": [
+                {
+                    "type": "fieldset",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyFieldSet",
+                        "id": "infoPontoLinha",
+                        "defaults": [
+                            "{disabled: false}"
+                        ],
+                        "hideOnMaskTap": false,
+                        "instructions": null,
+                        "title": "Pesquisar"
+                    },
+                    "designerId": "58f47838-df69-42f9-b39d-b8e552aebe65",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 4,
+                                "designer|userClassName": "MyTextField",
+                                "id": "txtItinerarioNumeroLinha",
+                                "itemId": "mytextfield5",
+                                "label": null,
+                                "labelWidth": "45%",
+                                "name": "numero",
+                                "placeHolder": "Número da linha"
+                            },
+                            "designerId": "1b44f142-835a-4ca4-a3b2-2c22aa81e0d5",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onTxtNumeroLinhaKeyup",
+                                        "fn": "onTxtNumeroLinhaKeyup",
+                                        "implHandler": [
+                                            "var queryString = textfield.getValue();\r",
+                                            "\r",
+                                            "var store = Ext.getCmp('listalinhas').getStore();\r",
+                                            "store.clearFilter();\r",
+                                            "\r",
+                                            "if(queryString){\r",
+                                            "    var thisRegEx = new RegExp(queryString, \"i\");\r",
+                                            "\r",
+                                            "    store.filterBy(function(record) {\r",
+                                            "        if (thisRegEx.test(record.get('numero')) ||\r",
+                                            "        thisRegEx.test(record.get('origem')) ||\r",
+                                            "        thisRegEx.test(record.get('destino'))) {\r",
+                                            "            return true;\r",
+                                            "        };\r",
+                                            "        return false;\r",
+                                            "    });\r",
+                                            "}else{\r",
+                                            "    Ext.getCmp('btnItinerarioSugerir').setHidden(true);\r",
+                                            "}\r",
+                                            "\r",
+                                            "var total = store.getCount();\r",
+                                            "if(total > 0){\r",
+                                            "    Ext.getCmp('btnItinerarioSugerir').setHidden(true);\r",
+                                            "}else{\r",
+                                            "    Ext.getCmp('btnItinerarioSugerir').setHidden(false);\r",
+                                            "\r",
+                                            "}"
+                                        ],
+                                        "name": "keyup"
+                                    },
+                                    "designerId": "ea36aa05-77e8-4037-a18e-af913537b6cd"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onTxtNumeroLinhaClearicontap",
+                                        "fn": "onTxtNumeroLinhaClearicontap",
+                                        "implHandler": [
+                                            "var store = Ext.getCmp('listalinhas').getStore();\r",
+                                            "store.clearFilter();\r",
+                                            "\r",
+                                            "Ext.getCmp('btnItinerarioSugerir').setHidden(true);"
+                                        ],
+                                        "name": "clearicontap"
+                                    },
+                                    "designerId": "5c969ad8-e147-4ede-9074-5b9d805325f9"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton38",
+                        "hidden": true,
+                        "id": "btnItinerarioSugerir",
+                        "style": "margin-top:-20px;",
+                        "text": "Sugerir"
+                    },
+                    "designerId": "40e77c86-1b30-42df-a22d-b1bef01111cc"
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyContainer4",
+                "designer|userAlias": "mycontainer4",
+                "id": "containerPontoLinhas",
+                "style": "margin:-10px;",
+                "ui": "",
+                "layout": "fit"
+            },
+            "designerId": "ee998145-cb0c-448c-81db-a098f1079ecd",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "style": "font-size:80%;"
+                    },
+                    "designerId": "699e0bb7-3c76-4e42-8034-cc89c3eceb53",
+                    "masterInstanceId": "ExtBox1-ext-gen87053"
+                },
+                {
+                    "type": "label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyLabel2",
+                        "docked": "top",
+                        "height": null,
+                        "html": "Linhas servindo este ponto",
+                        "id": "lblPontoDetalheLinhasServindoPonto",
+                        "style": "text-align:left;font-style: italic;font-size:85%;font-weight:bold;margin-top:20px;margin-left:15px;"
+                    },
+                    "designerId": "2c20348d-5140-4364-8acd-0a8f0e032eac"
+                }
+            ]
+        }
+    ]
+}
