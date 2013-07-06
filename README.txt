@@ -19,20 +19,19 @@ conta.
 4º Faça uma conta no github;
 
 ===Clonando o Projeto e criando o Banco
-4º Abra o GitBash e prossiga com o(s) seguinte(s) comando(s) para clonar o projeto:
+4º Abra o GitBash e vá até a pasta htdocs no xampp:
+obs.: Onde está esse "<diretório_do_xampp>" sempre informe o diretório onde você instalou o seu xampp.
+
+cd <diretório_do_xampp>/xampp/htdocs/
+
+5º Prossiga com o(s) seguinte(s) comando(s) para clonar o projeto:
 
 git clone https://github.com/cemantika/wikibus.html5.git
 
---após clonar talvez ele venha a solicitar o usuário e senha do github, informe.
+--após informar o comando de clonar ele solicitará o usuário e senha do github, informe.
+--O projeto foi clonado para o diretório "<diretório_do_xampp>/xampp/htdocs/wikibus".
 
-5º Através do GitBash ainda aberto crie um novo Branch para edição do código com o(s) seguinte(s) comando(ºs):
-
-cd wikibus
-git checkout -b "nome_do_branch"
-
-6º O projeto foi clonado para o diretório principal do usuário atual do SO (Sistema Operacional) (no caso do windows, C:/users/nome_do_usuario/), vá até lá, copie a pasta do projeto e cole na pasta htdocs que está localizada no diretório onde foi instalado o XAMPP.
-
-7º Abra o brownser e na barra de endereços digite:
+6º Abra o brownser e na barra de endereços digite:
 
 localhost/phpmyadmin
 
@@ -45,18 +44,37 @@ localhost/wikibus
 ---e clicando em app.html
 
 ===Preparando a IDE
-8º Abra a IDE e importe o projeto que está no diretório "..xampp/htdocs"
+7º Abra a IDE e importe o projeto que está no diretório "<diretório_do_xampp>/xampp/htdocs/wikibus".
 
 -- A partir de agora você tem o projeto pronto para edição 
 
 ===Upando contribuições do código (branchs)
-9º Para upar o seu branch copie o projeto que está no "..xampp/htdocs" e cole em cima do projeto que está no diretório principal do usuário atual do SO. Após isso abra o GitBash e informe os seguintes comandos:
+8º Através do GitBash ainda aberto crie um novo Branch para edição do código com o(s) seguinte(s) comando(ºs):
 
-cd wikibus
+cd wikibus				
+--para entrar na pasta do projeto.
+
+git checkout -b "nome_do_branch"	
+--cria um novo branch
+
+---agora faça suas alterações no código através da sua IDE.
+
+9º Para upar o seu branch abra o GitBash, vá até o diretório do projeto, se já não estiver nele (para conferir digite "ls" e dê enter para saber para qual pasta o GitBash está apontando), e informe os seguintes comandos para dar commit e upar a colaboração:
+
+cd <diretório_do_xampp>/xampp/htdocs/wikibus
+--apenas se você já não estiver no diretório do projeto.
+
 git checkout nome_do_branch
+--vai para o branch que foram feitas as alterações, não é necessário se você já estiver nesse branch.
+
 git add .
+--adiciona as novas alterações no branch.
+
 git commit -m "nome_do_commit"
+--cria um pacote das alterações para que sejam enviadas ao repositório do github.
+
 git push -u origin nome_do_branch
+--envia o código ao github.
 
 ---ele vai solicitar o seu usuário e senha do github, informe.
 
@@ -65,12 +83,14 @@ git push -u origin nome_do_branch
 10º Após upar alguma coisa, é de extrema importância se atualizar o código local do projeto antes de iniciar com qualquer branch novo, para atualizar o código deve-se fazer o seguinte:
 
 git checkout master
+--para mudar para o branch master, se quiser voltar ao outro branch só é usar o mesmo código modificando o nome do branch pelo de seu interesse.
+
 git pull
+--ele vai solicitar o seu usuário e senha do github, informe.
 
----ele vai solicitar o seu usuário e senha do github, informe.
----Copie o projeto localizado no diretório do usuário atual do SO e cole na pasta "..xampp/htdocs/" novamente, para que possa sempre trabalhar com um código atualizado.
+---Após isso dê um F5 no seu projeto na IDE.
 
-11º Para novas contribuições repita sempre a partir do 9º passo.
+11º Para novas contribuições repita sempre a partir do 8º passo, lembre-se: cada nova alteração é um novo branch, não recicle branchs já utilizados, eles não são atualizados junto com o resto do projeto ao dar o comando "git pull".
 
 obs.: O sistema de login ainda não terminou de ser implementado, porém o banco tem um usuário com nome, email e senha iguais a 'admin' para testes.
 
