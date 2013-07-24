@@ -25,27 +25,32 @@ Ext.define('Ubibus.view.Viewport', {
     ],
 
     config: {
+    	id: 'viewPort',
         tabBar: {
             docked: 'bottom'
         },
         items: [
 			{
-			    xtype: 'usuario',
+			    id: 'usuarioPort',
+				xtype: 'usuario',
 			    title: 'Usuário',
 			    iconCls: 'user'
 			},
             {
+				id: 'homePort',
                 xtype: 'navhome',
-                //hidden: true,
+                disabled: true,
                 iconCls: 'home'
             },
             {
+            	id: 'ocorrenciaPort',
                 xtype: 'ocorrencia',
-                //hidden: true,
+                disabled: true,
                 title: 'Ocorrência',
                 iconCls: 'info'
             },
             {
+            	id: 'indicadoresPort',
                 xtype: 'indicadores',
                 hidden: true,
                 title: 'Indicadores',

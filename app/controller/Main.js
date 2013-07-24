@@ -22,6 +22,7 @@ Ext.define('Ubibus.controller.Main', {
             'Onibus',
             'Pontos',
             'Linha',
+            'Usuario'
         ],
 
         refs: {
@@ -35,12 +36,17 @@ Ext.define('Ubibus.controller.Main', {
             navHome: 'navhome',
             pontodetalhe: 'pontodetalhe',
             listalinhas: 'listalinhas',
-            mapa: 'mapa'
+            mapa: 'mapa',
+            usuarioView: '#usuarioView',
+            viewport: '#viewPort'
         },
 
         control: {
-        	"usuario #btnUsuarioLogar": {
+        	"usuario #btnUsuarioConfirmar": {
                 tap: 'logar'
+            },
+            "navhome #btnLogout": {
+            	tap: 'logout'
             },
         	"navhome #btnNavAdicionarEmpresa": {
                 tap: 'salvarEmpresa'
@@ -82,93 +88,23 @@ Ext.define('Ubibus.controller.Main', {
     },
 
     logar: function(button, e, options) {
-
-        var dadosOnibus = this.getOnibusView().getValues();
-        var storeOnibus = Ext.getStore('onibus');
-
-        storeOnibus.removeAll();
-        storeOnibus.getProxy().setExtraParam('numero', dadosOnibus.numeroOnibus);
-
-
-        storeOnibus.load({
-            scope: this,
-            callback: function(registro) {
-
-                //Guarda o numero pesquisado
-                numeroPesquisado = this.getOnibusView().getValues().numeroOnibus;
-
-                //Exibe a tela de formulário do onibus
-                this.getNavHome().push({
-                    xtype: 'onibusform',
-                    title: 'Onibus: ' + numeroPesquisado
-                });
-
-                //Verifica se a consulta retornou algum onibus
-                if(registro[0]){//Onibus encontrado
-
-                    //Altera o campo instructions do fieldset
-                    //Ext.getCmp('fieldPesquisaOnibus').setInstructions('Onibus cadastrado!   ;)');
-                    Ext.getCmp('lblOnibusStatusPesquisa').setHtml('Onibus já cadastrado!   ;)');
-
-                    //Preenche os campos com o resultado da pesquisa
-                    this.getOnibusForm().setValues(registro[0].data);
-
-                    //Exibe os botões de 'opções'
-                    Ext.getCmp('opcoesOnibus').setHidden(false);
-
-                    //Habilita os botões de 'opções'
-                    Ext.getCmp('btnOnibusLocalizacao').setDisabled(false);
-                    Ext.getCmp('btnOnibusOcorrencia').setDisabled(false);
-                    Ext.getCmp('btnOnibusEditar').setDisabled(false);
-                    Ext.getCmp('btnOnibusDetalhe').setDisabled(false);
-
-                    //Desabilita os campos para edição
-                    Ext.getCmp('selectEmpresa').setDisabled(true);
-                    Ext.getCmp('checkAdaptado').setDisabled(true);
-
-                    //Oculta o botão de 'Salvar'
-                    Ext.getCmp('btnSalvarOnibus').setHidden(true);
-
-                    Ext.getCmp('formOnibus').setHidden(false);
-
-                }else{//Onibus não encontrado
-
-                    //Guarda o numero pesquisado
-                    numeroPesquisado = this.getOnibusView().getValues().numeroOnibus;
-
-                    //Limpa os campos do formulário
-                    Ext.getCmp('onibusView').reset();
-
-                    //Preenche os campo 'Numero do onibus' com o numero pesquisado
-                    Ext.getCmp('numeroOnibus').setValue(numeroPesquisado);
-                    Ext.getCmp('txtNumeroOnibus').setValue(numeroPesquisado);
-
-                    //Altera o campo instructions do fieldset
-                    //Ext.getCmp('fieldPesquisaOnibus').setInstructions('Onibus não cadastrado!   :(');
-                    Ext.getCmp('lblOnibusStatusPesquisa').setHtml('Onibus não cadastrado!   :(');
-
-                    //Exibe os botões de 'opções'
-                    Ext.getCmp('opcoesOnibus').setHidden(true);
-
-                    //Disabilita os botões de 'opções'
-                    Ext.getCmp('btnOnibusLocalizacao').setDisabled(true);
-                    Ext.getCmp('btnOnibusOcorrencia').setDisabled(true);
-                    Ext.getCmp('btnOnibusEditar').setDisabled(true);
-                    Ext.getCmp('btnOnibusDetalhe').setDisabled(true);
-
-                    //Habilita os campos para edição
-                    Ext.getCmp('selectEmpresa').setDisabled(false);
-                    Ext.getCmp('checkAdaptado').setDisabled(false);
-
-                    //Exibe o botão de 'Salvar'
-                    Ext.getCmp('btnSalvarOnibus').setHidden(false);
-
-                    //Exibe o formulário
-                    Ext.getCmp('formOnibus').setHidden(false);
-                }
-
-            }
-        });
+    	//console.log('aqui');
+    	Ext.getCmp('usuarioPort').setHidden(true);
+    	
+    	Ext.getCmp('homePort').setHidden(false);
+    	Ext.getCmp('usuarioPort').setDisabled(true);
+    	Ext.getCmp('homePort').setDisabled(false);
+    	Ext.getCmp('ocorrenciaPort').setDisabled(false);
+    },
+    
+    logout: function(button, e, options) {
+    	//console.log('aqui');
+    	Ext.getCmp('usuarioPort').setHidden(false);
+    	
+    	Ext.getCmp('homePort').setHidden(true);
+    	Ext.getCmp('usuarioPort').setDisabled(false);
+    	Ext.getCmp('homePort').setDisabled(true);
+    	Ext.getCmp('ocorrenciaPort').setDisabled(true);
     },
     
     salvarEmpresa: function(button, e, options) {
@@ -186,7 +122,7 @@ Ext.define('Ubibus.controller.Main', {
                 //var store = Ext.create('store.empresas');
 
                 //Adiciona o model a store e envia pro servidor
-                //store.add(dados);        
+                //store.add(dados);
                 //store.sync();
 
                 //Adicionao o model a lista que é exibida na tela
