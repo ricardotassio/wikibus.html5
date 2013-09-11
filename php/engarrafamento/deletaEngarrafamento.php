@@ -1,18 +1,16 @@
- <?php
+ <?php 
 	//chama o arquivo de conexão com o bd
 	include("../conectar.php");
 
-	$info = $_POST['usuario'];
+	$info = $_POST['engarrafamentos'];
 
 	$data = json_decode(stripslashes($info));
 
-	$senha = $data->senha;
-	$id = $data->id;
+	$sequencia = $data->sequencia;
 	 
 	//consulta sql
-	$query = sprintf("UPDATE usuario SET senha = '%s' WHERE id=%d",
-		mysql_real_escape_string($senha),
-		mysql_real_escape_string($id));
+	$query = sprintf("DELETE FROM engarrafamentos WHERE sequencia=%d",
+		mysql_real_escape_string($sequencia));
 
 	$rs = mysql_query($query);
 	 
